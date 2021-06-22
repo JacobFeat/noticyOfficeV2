@@ -1,8 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+    --green-color: #2D4244;
+    --gold-color: #E3C67F;
+    --white-color: #FCF9F2;
+    
+  }
+
 *{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body{
     margin: 0;
     padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+header{
+    font-size: 14px;
+    position: relative;
+    color: var(--green-color);
+}
+
+nav{
+    height: 70px;
+    box-shadow: 0px 2px 36px #bababa;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 50px;
+    font-size: 1em;
+    z-index: 2;
+    position: relative;
+}
+
+.logo{
+    height: 50%;
+}
+
+.nav-list{
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-list li{
+    padding: 0px 30px;
+    cursor: pointer;
+}
+
+.nav-list li:hover{
+    /* color: #000; */
+}
+
+.header-bg{
+    height: calc(100vh - 70px);
+    width: 100%;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    z-index: 0;
+    /* object-fit: cover; */
+}
+
+.header-bg-gradient{
+    position: absolute;
+    top: 70px;
+    left: 0;
+    height: calc(100vh - 70px);
+    width: 100%;
+    z-index: 1;
+    background: rgb(255,255,255);
+    background: linear-gradient(100deg, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
+}
+
+.header-content{
+    position: relative;
+    margin: 25vh 0 0 10vw;
+}
+
+.header-title{
+    z-index: 2;
+    font-size: 3.4em;
+    font-weight: 900;
+    position: inherit;
+}
+
+.header-description{
+    position: inherit;
+    z-index: 2;
+    width: 500px;
+    margin: 30px 0 0;
+    font-size: 1.2em;
+    line-height: 1.6em;
+}
+
+.header-btn{
+    position: inherit;
+    z-index: 2;
+    margin: 30px 0 0;
+    width: 220px;
+    height: 36px;
+    background: var(--gold-color);
+    color: var(--green-color);
+    border: none;
+    border-radius: 2px;
+    font-weight:700;
+    letter-spacing: 1.5px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.header-btn:hover{
+    background: var(--green-color);
+    color: var(--white-color);
+    transition: 0.3s;
 }
