@@ -20,9 +20,11 @@ body{
     font-family: 'Lato', sans-serif;
 }
 
-header{
+.main-page{
     font-size: 14px;
-    position: relative;
+    /* position: relative;
+    top: 0;
+    left: 0; */
     color: var(--green-color);
     height: 100vh;
 }
@@ -30,13 +32,18 @@ header{
 nav{
     height: 80px;
     box-shadow: 0px 2px 36px #bababa;
+    background: #fff;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0px 50px;
     font-size: 1em;
-    z-index: 2;
-    position: relative;
+    z-index: 98;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
 }
 
 .logo{
@@ -94,19 +101,21 @@ nav{
 }
 
 .header-content{
-    position: relative;
-    margin: 25vh 0 0 10vw;
+    /* position: relative; */
+    color: var(--green-color);
+    margin: 30vh 0 0 10vw;
+    z-index: 2;
 }
 
 .header-title{
     z-index: 2;
     font-size: 3.4em;
     font-weight: 900;
-    position: inherit;
+    position: relative;
 }
 
 .header-description{
-    position: inherit;
+    position: relative;
     z-index: 2;
     width: 500px;
     margin: 30px 0 0;
@@ -115,7 +124,7 @@ nav{
 }
 
 .header-btn{
-    position: inherit;
+    position: relative;
     z-index: 2;
     margin: 30px 0 0;
     width: 220px;
@@ -156,4 +165,62 @@ nav{
 
 .change-first{
     background: #C8C8C8;
+}
+
+.content-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 200px;
+    font-size: 14px;
+    color: var(--green-color);
+}
+
+.content-left{
+    width: 350px;
+    margin-right: 100px;
+}
+
+.content-title{
+    font-size: 2.5em;
+    margin: 0px 0px 30px;
+    position: relative;
+    font-weight: 800;
+}
+
+.content-title::before{
+    content: '';
+    position: absolute;
+    width: 140px;
+    height: 2px;
+    background: var(--gold-color);
+    bottom: -10px;
+}
+
+.content-text{
+    font-size: 1.2em;
+    margin-top: 30px;
+}
+
+.content-img{
+    width: 400px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.about-me-box .content-left{
+    order: 2;
+    margin-right: 0px;
+    margin-left: 100px;
+}
+
+.about-me-box .content-title::after{
+    content: "NOTARIUSZ";
+    font-size: 0.4em;
+    position: absolute;
+    top: -30px;
+    left: 0;
+    color: var(--gold-color);
+
 }

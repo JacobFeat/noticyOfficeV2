@@ -1,3 +1,4 @@
+const changeBtnAll = document.querySelector(".change-bg-btn");
 const changeFirBtn = document.querySelector(".change-first");
 const changeSecBtn = document.querySelector(".change-second");
 const changeThiBtn = document.querySelector(".change-third");
