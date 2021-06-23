@@ -7,20 +7,32 @@ const secondBgImg = document.querySelector(".second-img");
 const thirdBgImg = document.querySelector(".third-img");
 
 
-changeFirBtn.addEventListener("click", ()=>{
+changeFirBtn.addEventListener("click", turnFirstOn);
+
+changeSecBtn.addEventListener("click", turnSecondOn);
+
+changeThiBtn.addEventListener("click", turnThirdOn);
+
+setInterval(()=>{
+    setTimeout(turnSecondOn, 7000);
+    setTimeout(turnThirdOn, 14000);
+    turnFirstOn();
+}, 21000);
+
+function turnFirstOn(){
     firstBgImg.style.opacity="1";
     secondBgImg.style.opacity="0";
     thirdBgImg.style.opacity="0";
-});
+}
 
-changeSecBtn.addEventListener("click", ()=>{
+function turnSecondOn(){
     firstBgImg.style.opacity="0";
     secondBgImg.style.opacity="1";
     thirdBgImg.style.opacity="0";
-});
+}
 
-changeThiBtn.addEventListener("click", ()=>{
+function turnThirdOn(){
     firstBgImg.style.opacity="0";
     secondBgImg.style.opacity="0";
     thirdBgImg.style.opacity="1";
-});
+}
