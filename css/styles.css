@@ -230,19 +230,19 @@ nav{
 }
 
 #content-box > .content-left{
-    transform: translateX(-30%);
+    transform: translateX(-50%);
 }
 
 #content-box > .content-img{
-    transform: translateX(30%);
+    transform: translateX(50%);
 }
 
 #about-me-box > .content-left{
-    transform: translateX(30%);
+    transform: translateX(50%);
 }
 
 #about-me-box > .content-img{
-    transform: translateX(-30%);
+    transform: translateX(-50%);
 }
 
 .content-active{
