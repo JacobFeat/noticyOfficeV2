@@ -10,7 +10,7 @@ const thirdBgImg = document.querySelector(".third-img");
 
 const contentAll = document.querySelectorAll(".content-left, .content-img");
 
-document.addEventListener("scroll", debounce(scrollAnim));
+document.addEventListener("scroll", debounce(scrollAnim, 10));
 
 function scrollAnim(e){
     contentAll.forEach(content => {
