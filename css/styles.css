@@ -13,6 +13,10 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+
 body{
     margin: 0;
     padding: 0;
@@ -20,7 +24,7 @@ body{
     font-family: 'Lato', sans-serif;
 }
 
-.main-page{
+#main-page{
     font-size: 14px;
     /* position: relative;
     top: 0;
@@ -168,7 +172,16 @@ nav{
     background: #C8C8C8;
 }
 
-.content-box{
+#content-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 200px;
+    font-size: 14px;
+    color: var(--green-color);
+}
+
+#about-me-box{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -208,16 +221,16 @@ nav{
     height: 450px;
     object-fit: cover;
     border-radius: 10px;
-    /* box-shadow: 0px 0px 30px rgb(180, 180, 180); */
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
-.about-me-box .content-left{
+#about-me-box .content-left{
     order: 2;
     margin-right: 0px;
     margin-left: 100px;
 }
 
-.about-me-box .content-title::after{
+#about-me-box .content-title::after{
     content: "NOTARIUSZ";
     font-size: 0.4em;
     position: absolute;
@@ -239,7 +252,7 @@ nav{
     margin: 0 0 200px;
 }
 
-.notarial-action-box{
+#notarial-action-box{
     font-size: 24px;
     color: var(--green-color);
     width: 700px;
@@ -412,6 +425,7 @@ nav{
 .form-title{
     text-align: center;
     margin: 200px 0 50px;
+    color: var(--green-color);
     font-size: 32px;
 }
 
@@ -467,4 +481,113 @@ nav{
     font-size: 0.75em;
     font-weight: 600;
     letter-spacing: 1.5px;
+    cursor: pointer;
+}
+
+#contact-info-container{
+    padding: 160px 0;
+    background: var(--green-color);
+    color: var(--white-color);
+    display: flex;
+    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+}
+
+.contact-content{
+    margin-right: 50px;
+
+}
+
+.contact-title{
+    font-size: 1.7em;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.contact-title::before{
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 2px;
+    background: var(--gold-color);
+    bottom: -10px;
+}
+
+.contact-content p, .contact-content a{
+    margin: 8px 0;
+}
+
+.contact-subtitle{
+    font-weight: 800;
+    padding-top: 20px;
+}
+
+.phone-number{
+    position: relative;
+    color: var(--white-color);
+    text-decoration: none;
+    display: block;
+}
+
+/* 
+.phone-number::before{
+    content: '';
+    background-image: url('/images/icons/phone.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -35px;
+} */
+
+.contact-addition{
+    width: 400px;
+    font-weight: 300;
+    /* text-decoration: underline; */
+}
+
+.contact-link{
+    /* margin-left: 30px !important; */
+    display: flex;
+    align-items: center;
+}
+
+.contact-link:first-of-type{
+    padding-top: 10px !important;
+}
+
+.contact-link img{
+    width: 24px;
+    /* height: 20p; */
+    margin-right: 10px;
+}
+
+
+.email{
+    color: var(--white-color);
+    text-decoration: none;
+    position: relative;
+}
+
+/* .email::before{
+    content: '';
+    background-image: url('/images/icons/email.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 26px;
+    height: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -35px;
+} */
+
+.map{
+    height: 340px;
+    margin-left: 50px;
 }
