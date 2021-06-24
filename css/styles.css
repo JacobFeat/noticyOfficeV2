@@ -244,6 +244,12 @@ nav{
 .middle-bg{
     width: 100%;
     height: 350px;
+<<<<<<< HEAD
+=======
+    /* border: 1px solid red; */
+    /* background: red; */
+    background-image: url("/images/middle-bg.jpg");
+>>>>>>> 12ce0bedca3209feb9e68a531d10cf026386a2c9
     background-image: url("../images/2.jpg");
     background-size: cover;
     background-position-y: 20%;
