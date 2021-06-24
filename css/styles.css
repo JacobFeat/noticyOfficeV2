@@ -191,7 +191,8 @@ nav{
 }
 
 .content-left{
-    width: 350px;
+    min-width: 350px;
+    max-width: 350px;
     margin-right: 100px;
 }
 
@@ -222,6 +223,7 @@ nav{
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    /* margin-left: 100px; */
 }
 
 #about-me-box .content-left{
@@ -342,6 +344,7 @@ nav{
 .half-title{
     margin-bottom: 50px;
     position: relative;
+    font-size: 1.4em;
 }
 
 .half-title::after{
@@ -531,19 +534,6 @@ nav{
     display: block;
 }
 
-/* 
-.phone-number::before{
-    content: '';
-    background-image: url('/images/icons/phone.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    width: 26px;
-    height: 26px;
-    top: 50%;
-    transform: translateY(-50%);
-    left: -35px;
-} */
 
 .contact-addition{
     width: 400px;
@@ -553,6 +543,7 @@ nav{
 
 .contact-link{
     /* margin-left: 30px !important; */
+    transition: 0.5s;
     display: flex;
     align-items: center;
 }
@@ -561,10 +552,32 @@ nav{
     padding-top: 10px !important;
 }
 
-.contact-link img{
+.contact-link svg{
+    fill: var(--white-color);
     width: 24px;
-    /* height: 20p; */
-    margin-right: 10px;
+   transition: 0.5s ease;
+   margin-right: 10px;
+}
+
+
+.contact-link:last-of-type svg{
+    margin-top: 2px;
+}
+
+.contact-link:hover{
+    transform: translateX(20px);
+    transition: 0.5s;
+}
+
+
+.contact-link a{
+    transition: 0.5s ease;
+}
+
+.contact-link:hover a, .contact-link:hover svg{
+   color: var(--gold-color); 
+   fill: var(--gold-color);
+   transition: 0.5s ease;
 }
 
 
@@ -574,20 +587,44 @@ nav{
     position: relative;
 }
 
-/* .email::before{
-    content: '';
-    background-image: url('/images/icons/email.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    width: 26px;
-    height: 14px;
-    top: 50%;
-    transform: translateY(-50%);
-    left: -35px;
-} */
-
 .map{
     height: 340px;
     margin-left: 50px;
+}
+
+@media screen and (max-width:1050px) {
+    .nav-list{
+        display: none;
+    }
+    
+
+}
+
+@media screen and (max-width: 920px) {
+    #main-page{
+        /* font-size: 13px; */
+    }
+    
+    .header-description{
+        /* width: 400px; */
+    }
+
+    #content-box{
+        flex-wrap: wrap;
+    }
+
+    .content-left{
+        margin-right: 0;
+        margin-bottom: 100px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    #main-page{
+        font-size: 13px;
+    }
+    
+    .header-description{
+        width: 400px;
+    }
 }
