@@ -10,19 +10,37 @@ const thirdBgImg = document.querySelector(".third-img");
 
 const contentAll = document.querySelectorAll(".content-left, .content-img");
 
-document.addEventListener("scroll", debounce(scrollAnim, 10));
+const notarialTitle = document.querySelector('.notarial-action');
+const notarialText = document.querySelector('.notarial-action-text');
+const notarialList = document.querySelectorAll('.notarial-action-list li');
+const halfContentAll = document.querySelectorAll('.half-content');
 
-function scrollAnim(e){
+document.addEventListener("scroll", debounce(scrollAnimAll, 10));
+
+function scrollAnimAll(e){
     contentAll.forEach(content => {
-        const slideInAt = (window.scrollY + window.innerHeight) - content.clientHeight/2;
-        const isHalf = slideInAt > content.offsetTop;
-        console.log(content.clientHeight);
-        if(isHalf){
-            console.log("siu");
-            content.classList.add('content-active');
-        }
+        scrollAnim(content, 2, 'content-active');
     });
 
+    scrollAnim(notarialTitle, 1, 'notarial-active');
+    scrollAnim(notarialText, 1, 'notarial-active');
+
+    notarialList.forEach(item => {
+        scrollAnim(item, 1, 'notarial-active');
+    });
+
+    halfContentAll.forEach(halfContent => {
+        scrollAnim(halfContent, 3, 'half-active');
+    })
+        
+}
+
+function scrollAnim(item, rate = 2, addedClass){
+    const slideInAt = (window.scrollY + window.innerHeight) - item.clientHeight / rate;
+    const isHalf = slideInAt > item.offsetTop;
+    if(isHalf){
+        item.classList.add(addedClass);
+    }
 }
 
 changeFirBtn.addEventListener("click", turnFirstOn);

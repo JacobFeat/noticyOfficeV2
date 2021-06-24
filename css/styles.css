@@ -289,6 +289,8 @@ nav{
     text-align: center;
     margin: 0 0 70px;
     position: relative;
+    transform: translateY(20vh);
+    opacity: 0;
 }
 
 .notarial-action::before{
@@ -316,6 +318,8 @@ nav{
 .notarial-action-text{
     font-size: 0.7em;
     font-weight: 500;
+    transform: translateY(20vh);
+    opacity: 0;
     /* margin: 20px 0; */
     /* text-align: center; */
 }
@@ -330,6 +334,8 @@ nav{
 
 .notarial-action-list li{
     margin: 5px 0 0 10px;
+    transform: translate(0vw, 20vh);
+    opacity: 0;
 }
 
 .notarial-action-list li::before{
@@ -343,17 +349,24 @@ nav{
     background-size: cover;
 }
 
+.notarial-active{
+    transform: translate(0, 0) !important;
+    opacity: 1 !important;
+    transition: 1s ease;
+}
+
 .two-halves{
     display: flex;
     align-items: center;
     /* justify-content: center; */
-    position: relative;
+    /* position: relative; */
     color: var(--green-color);
 }
 
 .half-img{
     width: 50%;
     /* height: 500px; */
+    z-index: 2;
 }
 
 .half-content{
@@ -361,6 +374,8 @@ nav{
     font-size: 24px;
     font-weight: 400;
     width: 500px;
+    transform: translateY(30vh);
+    opacity: 0;
 }
 
 .half-title{
@@ -400,6 +415,7 @@ nav{
 .half-second{
     order: 1;
     margin-left: 80px;
+    /* transform: translateY(30vh); */
 }
 
 .half-img-second{
@@ -445,6 +461,12 @@ nav{
 .half-list a{
     text-decoration: none;
     color: var(--green-color);
+}
+
+.half-active{
+    transform: translate(0, 0) !important;
+    opacity: 1 !important;
+    transition: 0.8s ease;
 }
 
 .form-title{
