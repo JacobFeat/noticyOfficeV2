@@ -14,7 +14,7 @@ document.addEventListener("scroll", debounce(scrollAnim, 10));
 
 function scrollAnim(e){
     contentAll.forEach(content => {
-        const slideInAt = (window.scrollY + window.innerHeight) - content.clientHeight/2.5;
+        const slideInAt = (window.scrollY + window.innerHeight) - content.clientHeight/2;
         const isHalf = slideInAt > content.offsetTop;
         console.log(content.clientHeight);
         if(isHalf){
