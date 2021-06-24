@@ -13,7 +13,7 @@ const contentAll = document.querySelectorAll(".content-left, .content-img");
 const notarialTitle = document.querySelector('.notarial-action');
 const notarialText = document.querySelector('.notarial-action-text');
 const notarialList = document.querySelectorAll('.notarial-action-list li');
-const halfContentAll = document.querySelectorAll('.half-content');
+const halfContentAll = document.querySelectorAll('.half-content, .half-img');
 
 document.addEventListener("scroll", debounce(scrollAnimAll, 10));
 
@@ -32,7 +32,7 @@ function scrollAnimAll(e){
     halfContentAll.forEach(halfContent => {
         scrollAnim(halfContent, 3, 'half-active');
     })
-        
+
 }
 
 function scrollAnim(item, rate = 2, addedClass){
