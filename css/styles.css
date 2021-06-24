@@ -244,10 +244,7 @@ nav{
 .middle-bg{
     width: 100%;
     height: 350px;
-    /* border: 1px solid red; */
-    /* background: red; */
-    background-image: url("/images/middle-bg.jpg");
-    background-image: url("/images/2.jpg");
+    background-image: url("../images/2.jpg");
     background-size: cover;
     background-position-y: 20%;
     background-attachment: fixed;
@@ -317,7 +314,7 @@ nav{
     left: -10px;
     height: 10px;
     width: 10px;
-    background-image: url("/images/list.png");
+    background-image: url("../images/list.png");
     background-size: cover;
 }
 
@@ -405,7 +402,7 @@ nav{
     left: -10px;
     height: 10px;
     width: 10px;
-    background-image: url("/images/list.png");
+    background-image: url("../images/list.png");
     background-size: cover;
     transition: 0.5s;
 }
