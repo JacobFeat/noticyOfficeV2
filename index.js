@@ -8,6 +8,22 @@ const firstBgImg = document.querySelector(".first-img");
 const secondBgImg = document.querySelector(".second-img");
 const thirdBgImg = document.querySelector(".third-img");
 
+const contentAll = document.querySelectorAll(".content-left, .content-img");
+
+document.addEventListener("scroll", debounce(scrollAnim));
+
+function scrollAnim(e){
+    contentAll.forEach(content => {
+        const slideInAt = (window.scrollY + window.innerHeight) - content.clientHeight/2.5;
+        const isHalf = slideInAt > content.offsetTop;
+        console.log(content.clientHeight);
+        if(isHalf){
+            console.log("siu");
+            content.classList.add('content-active');
+        }
+    });
+
+}
 
 changeFirBtn.addEventListener("click", turnFirstOn);
 changeSecBtn.addEventListener("click", turnSecondOn);
@@ -47,3 +63,19 @@ function turnThirdOn(){
     changeSecBtn.style.background="#EAEAEA";
     changeThiBtn.style.background="#C8C8C8";
 }
+
+//wesbros
+function debounce(func, wait = 20, immediate = true) {
+    var timeout;
+    return function() {
+      var context = this, args = arguments;
+      var later = function() {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+      };
+      var callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if (callNow) func.apply(context, args);
+    };
+  }

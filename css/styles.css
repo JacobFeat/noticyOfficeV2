@@ -193,7 +193,9 @@ nav{
 .content-left{
     min-width: 350px;
     max-width: 350px;
-    margin-right: 100px;
+    margin-right: 100px;   
+    opacity: 0;
+    transition: 0.5s ease; 
 }
 
 .content-title{
@@ -222,8 +224,31 @@ nav{
     height: 450px;
     object-fit: cover;
     border-radius: 10px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    /* margin-left: 100px; */
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); 
+    opacity: 0;
+    transition: 0.5s ease; 
+}
+
+#content-box > .content-left{
+    transform: translateX(-30%);
+}
+
+#content-box > .content-img{
+    transform: translateX(30%);
+}
+
+#about-me-box > .content-left{
+    transform: translateX(30%);
+}
+
+#about-me-box > .content-img{
+    transform: translateX(-30%);
+}
+
+.content-active{
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+    transition: 0.8s ease;
 }
 
 #about-me-box .content-left{
