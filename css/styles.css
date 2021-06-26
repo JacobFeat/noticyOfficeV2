@@ -178,6 +178,104 @@ nav{
     background: #C8C8C8;
 }
 
+.header-contact-list{
+    z-index: 3;
+    position: absolute;
+    right: 0px;
+    top: calc(32vh);
+    list-style-type: none;
+    width: 400px;
+}
+
+.header-list-item{
+    font-weight: 700;
+    font-size: 16px;
+    background: hsl(0,0%,100%, 0.8);
+    padding: 40px 40px 40px 80px;
+    margin: 30px 0;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    position: relative;
+    max-height: 62px;
+    display: flex;
+    align-items: center;
+    transition: 0.4s ease;
+    right: 0px;
+    animation: header_contact_hide forwards 0.4s ease 4s;
+}
+
+
+.header-list-item-first-active{
+        transform: translate(-140px);
+    background-color: #fff;
+    transition: 0.4s !important;
+}
+
+.header-list-item-second-active{
+        transform: translate(-260px);
+    background-color: #fff;
+    transition: 0.4s !important;
+}
+
+.header-list-item-third-active{
+        transform: translate(-320px);
+    background-color: #fff;
+    transition: 0.4s !important;
+}
+
+@keyframes header_contact_hide {
+    0%{
+        right: 0;
+    }
+
+    
+    100%{
+        right: -320px;
+    }
+}
+
+.header-list-item a{
+    text-decoration: none;
+    color: var(--green-color);
+    padding: 3px 0;
+}
+
+.header-list-item::before{
+    content: '';
+    position: absolute;
+    /* background: red; */
+    background-image: url("../images/icons/home.svg");
+    background-size: cover;
+    width: 24px;
+    height: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 30px;
+}
+
+.item-first{
+    /* padding: 6px 40px 6px 80px; */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.item-first::before{
+    background-image: url("../images/icons/phone-green75.svg");
+    width: 27px;
+    height: 25px;
+
+}
+
+.item-second::before{
+    background-image: url("../images/icons/mail-green75.svg");
+    background-size: cover;
+    width: 31px;
+    height: 19px;
+    left: 27px;
+}
+
 #content-box{
     display: flex;
     justify-content: center;
