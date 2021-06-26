@@ -184,7 +184,6 @@ nav{
     right: 0px;
     top: calc(32vh);
     list-style-type: none;
-    width: 400px;
 }
 
 .header-list-item{
@@ -201,7 +200,8 @@ nav{
     align-items: center;
     transition: 0.4s ease;
     right: 0px;
-    animation: header_contact_hide forwards 0.4s ease 4s;
+    animation: header_contact_hide forwards 0.8s cubic-bezier(0.82, -0.1, 0.78, 0.5) 4s;
+    /* width: 420px; */
 }
 
 
