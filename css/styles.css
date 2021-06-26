@@ -77,8 +77,13 @@ nav{
     top: 80px;
     left: 0;
     z-index: 0;
-    /* object-fit: cover; */
+    object-fit: cover;
     transition: 1.5s ease;
+}
+
+.first-img{
+    /* object-fit: cover; */
+    /* left: 28vw; */
 }
 
 .second-img{
@@ -90,6 +95,7 @@ nav{
 .third-img{
     left: 30vw;
     /* top: 200px; */
+    object-fit: cover;
     opacity: 0;
 }
 
