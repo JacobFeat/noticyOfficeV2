@@ -83,7 +83,7 @@ nav{
 
 .first-img{
     /* object-fit: cover; */
-    /* left: 28vw; */
+    left: 28vw;
 }
 
 .second-img{
@@ -203,7 +203,7 @@ nav{
     align-items: center;
     transition: 0.4s ease;
     right: 0px;
-    animation: header_contact_hide forwards 0.8s cubic-bezier(0.82, -0.1, 0.78, 0.5) 4s;
+    animation: header_contact_hide forwards 0.8s cubic-bezier(0.82, -0.1, 0.78, 0.5) 7s;
     /* width: 420px; */
 }
 
@@ -497,18 +497,6 @@ nav{
     font-size: 1.4em;
 }
 
-.half-title::after{
-    content: '';
-    position: absolute;
-    top: -30px;
-    left: -30px;
-    width: 50px;
-    height: 50px;
-    z-index: -1;
-    background-image: url("../images/balance.png");
-    background-size: cover;
-    opacity: 0.5;
-}
 
 .half-title::before{
     content: '';
@@ -537,6 +525,10 @@ nav{
     /* top: 0; */
     /* right: 0; */
     margin-left: auto;
+}
+
+.half-links{
+    width: 700px;
 }
 
 .half-list{
@@ -581,7 +573,15 @@ nav{
     opacity: 1 !important;
     transition: 0.8s ease;
     clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%);
+}
 
+.half-read-more{
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    color: var(--green-color);
+    font-weight: 600;
 }
 
 .form-title{
