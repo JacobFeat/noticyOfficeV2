@@ -21,7 +21,7 @@ const headerListItemAll = document.querySelectorAll('.header-list-item');
 headerListItemAll.forEach(item => {
     item.addEventListener('mouseover', (e) => {
 
-        if(getComputedStyle(item).right !== "0px"){
+        if(getComputedStyle(item).right === "-360px"){
             if(e.target.closest('.item-first')){
                 item.classList.add('header-list-item-first-active'); 
             }

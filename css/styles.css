@@ -193,7 +193,7 @@ nav{
     font-size: 16px;
     background: hsl(0,0%,100%, 1);
     /* backdrop-filter: blur(100%); */
-    padding: 40px 40px 40px 64px;
+    padding: 40px 80px 40px 64px;
     margin: 30px 0;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
@@ -202,8 +202,8 @@ nav{
     display: flex;
     align-items: center;
     transition: 0.4s ease;
-    right: 0px;
-    animation: header_contact_hide forwards 0.8s cubic-bezier(0.82, -0.1, 0.78, 0.5) 7s;
+    right: -40px;
+    animation: header_contact_hide forwards 0.8s cubic-bezier(0.82, -0.1, 0.78, 0.5) 9s;
     /* width: 420px; */
 }
 
@@ -228,15 +228,15 @@ nav{
 
 @keyframes header_contact_hide {
     0%{
-        right: 0;
+        right: -40px;
         background-color: hsl(0,0%,100%, 1);
 
     }
 
     
     100%{
-        right: -320px;
-        background-color: hsl(0,0%,100%, 0.8);
+        right: -360px;
+        background-color: hsl(0,0%,100%, 0.8);;
     }
 }
 
