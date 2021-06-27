@@ -182,7 +182,9 @@ nav{
     z-index: 3;
     position: absolute;
     right: 0px;
-    top: calc(32vh);
+    /* top: calc(32vh); */
+    top: 50vh;
+    transform: translateY(-50%);
     list-style-type: none;
 }
 
@@ -190,6 +192,7 @@ nav{
     font-weight: 700;
     font-size: 16px;
     background: hsl(0,0%,100%, 1);
+    /* backdrop-filter: blur(100%); */
     padding: 40px 40px 40px 64px;
     margin: 30px 0;
     border-top-left-radius: 20px;
@@ -207,19 +210,19 @@ nav{
 
 .header-list-item-first-active{
         transform: translate(-140px);
-    background-color: #fff;
+        background-color: hsl(0,0%,100%, 1) !important;
     transition: 0.4s !important;
 }
 
 .header-list-item-second-active{
         transform: translate(-260px);
-    background-color: #fff;
+        background-color: hsl(0,0%,100%, 1) !important;
     transition: 0.4s !important;
 }
 
 .header-list-item-third-active{
         transform: translate(-320px);
-    background-color: #fff;
+        background-color: hsl(0,0%,100%, 1) !important;
     transition: 0.4s !important;
 }
 
