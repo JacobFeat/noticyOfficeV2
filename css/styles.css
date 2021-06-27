@@ -113,7 +113,7 @@ nav{
 .header-content{
     /* position: relative; */
     color: var(--green-color);
-    margin: 30vh 0 0 10vw;
+    padding: 30vh 0 0 10vw;
     z-index: 2;
 }
 
@@ -236,7 +236,7 @@ nav{
     
     100%{
         right: -360px;
-        background-color: hsl(0,0%,100%, 0.8);;
+        background-color: hsl(0,0%,100%, 0.8);
     }
 }
 
@@ -380,7 +380,8 @@ nav{
 .middle-bg{
     width: 100%;
     height: 350px;
-    background-image: url("../images/2.jpg");
+    background-image: url("../images/middle-bg/main3-bg.jpg");
+    
     background-size: cover;
     background-position-y: 20%;
     background-attachment: fixed;
@@ -495,13 +496,14 @@ nav{
     margin-bottom: 50px;
     position: relative;
     font-size: 1.4em;
+    /* letter-spacing: 1.2px; */
 }
 
 
 .half-title::before{
     content: '';
     position: absolute;
-    width: 120px;
+    width: 70px;
     height: 2px;
     background: var(--gold-color);
     bottom: -10px;
