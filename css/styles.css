@@ -191,8 +191,9 @@ nav{
 .header-list-item{
     font-weight: 700;
     font-size: 16px;
-    background: hsl(0,0%,100%, 1);
+    background: hsl(0,0%,100%, 0.8);
     /* backdrop-filter: blur(100%); */
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     padding: 40px 80px 40px 64px;
     margin: 30px 0;
     border-top-left-radius: 20px;
@@ -202,8 +203,8 @@ nav{
     display: flex;
     align-items: center;
     transition: 0.4s ease;
-    right: -40px;
-    animation: header_contact_hide forwards 0.8s cubic-bezier(0.82, -0.1, 0.78, 0.5) 9s;
+    right: -360px;
+    animation: header_contact_hide forwards 8s cubic-bezier(0.82, -0.1, 0.78, 0.5) 1.6s;
     /* width: 420px; */
 }
 
@@ -228,9 +229,13 @@ nav{
 
 @keyframes header_contact_hide {
     0%{
+        right: -360px;
+        background-color: hsl(0,0%,100%, 0.8);
+    }
+
+    10%, 90%{
         right: -40px;
         background-color: hsl(0,0%,100%, 1);
-
     }
 
     
@@ -477,7 +482,8 @@ nav{
 
 .half-img{
     width: 50%;
-    /* height: 500px; */
+    /* max-height: 500px; */
+    /* object-fit:scale-down; */
     z-index: 2;
     clip-path: polygon(0 99%, 100% 99%, 100% 100%, 0% 100%);
 }
