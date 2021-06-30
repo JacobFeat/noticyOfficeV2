@@ -33,9 +33,9 @@ body{
 
 #main-page{
     font-size: 14px;
-    /* position: relative;
+    position: relative;
     top: 0;
-    left: 0; */
+    left: 0;
     color: var(--green-color);
     overflow-x: hidden;
     height: 100vh;
@@ -842,7 +842,7 @@ nav{
     font-size: 0.9em;
     text-align: center;
 }
-/* 
+
 @media screen and (max-width:1050px) {
     .nav-list{
         display: none;
@@ -876,4 +876,4 @@ nav{
     .header-description{
         width: 400px;
     }
-} */
+}
