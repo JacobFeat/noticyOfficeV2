@@ -187,6 +187,7 @@ nav{
     top: 50vh;
     transform: translateY(-50%);
     list-style-type: none;
+    overflow-x: hidden;
 }
 
 .header-list-item{
@@ -472,12 +473,24 @@ nav{
 .notarial-action-list li{
     /* margin: 5px 0 0 10px; */
     transform: translate(0vw, 20vh);
+    transition: background 0.4s ease;
     opacity: 0;
     background: var(--white-color);
+    background: #fff;
     color: var(--green-color);
-    padding: 1.2em 0;
+    /* padding: 1.2em 0; */
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 0.8em;
     font-weight: 700;
+}
+
+.notarial-action-list li:hover{
+    background: var(--green-color);
+    color: #fff;
+    transition: 0.4s ease;
 }
 
 .list-text{
@@ -486,14 +499,21 @@ nav{
     background: none !important;
     color: var(--white-color) !important;
     font-weight: 500 !important;
-    font-size: 0.8em !important;
+    font-size: 0.85em !important;
     text-align: start !important;
     padding: 0 !important;
+    display: inline-block !important;
 }
 
 .list-last-item{
     background-color: var(--gold-color) !important;
+    transition: 0.4s ease !important;
 }
+
+.list-last-item:hover{
+    background-color: var(--green-color) !important;
+}
+
 
 .notarial-active{
     transform: translate(0, 0) !important;
@@ -548,6 +568,20 @@ nav{
 .half-text{
     font-size: 0.7em;
     line-height: 1.5em;
+}
+
+.half-text-hidden{
+    /* padding: 1em 0; */
+    display: none;
+}
+
+.half-read-more{
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    color: var(--green-color);
+    font-weight: 600;
 }
 
 .half-second{
@@ -612,14 +646,6 @@ nav{
     clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
-.half-read-more{
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-family: 'Lato', sans-serif;
-    color: var(--green-color);
-    font-weight: 600;
-}
 
 .form-title{
     text-align: center;
@@ -783,9 +809,25 @@ nav{
     position: relative;
 }
 
-.map{
+.map-box{
     height: 340px;
+    width: 500px;
     margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.map{
+    height: 90%;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.map-text{
+    width: 100%;
+    font-size: 0.9em;
+    text-align: center;
 }
 
 @media screen and (max-width:1050px) {
