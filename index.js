@@ -15,29 +15,36 @@ const notarialText = document.querySelector('.notarial-action-text');
 const notarialList = document.querySelectorAll('.notarial-action-list li');
 const halfContentAll = document.querySelectorAll('.half-content, .half-img');
 
+const halfImgAll = document.querySelectorAll('.half-img');
+
 const headerListItemAll = document.querySelectorAll('.header-list-item');
 
+halfImgAll[1].style.width = window.getComputedStyle(halfImgAll[0]).width;
 
-headerListItemAll.forEach(item => {
-    item.addEventListener('mouseover', (e) => {
 
-        if(getComputedStyle(item).right === "-360px"){
-            if(e.target.closest('.item-first')){
-                item.classList.add('header-list-item-first-active'); 
+setTimeout(() => {
+    headerListItemAll.forEach(item => {
+        item.addEventListener('mouseover', (e) => {
+    
+            if(getComputedStyle(item).right === "-360px"){
+                if(e.target.closest('.item-first')){
+                    item.classList.add('header-list-item-first-active'); 
+                }
+                else if(e.target.closest('.item-second')){
+                    item.classList.add('header-list-item-second-active'); 
+                }
+                
+                else if(e.target.closest('.item-third')){
+                    item.classList.add('header-list-item-third-active'); 
+                }
             }
-            else if(e.target.closest('.item-second')){
-                item.classList.add('header-list-item-second-active'); 
-            }
-            
-            else if(e.target.closest('.item-third')){
-                item.classList.add('header-list-item-third-active'); 
-            }
-        }
-    });
-    item.addEventListener('mouseleave', ()=>{
-        item.classList.remove(item.classList[2]); 
+        });
+        item.addEventListener('mouseleave', ()=>{
+            item.classList.remove(item.classList[2]); 
+        })
     })
-})
+}, 000);
+
 
 document.addEventListener("scroll", debounce(scrollAnimAll, 10));
 
