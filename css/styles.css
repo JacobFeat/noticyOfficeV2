@@ -4,7 +4,6 @@
     --green-color: #2D4244;
     --gold-color: #E3C67F;
     --white-color: #FCF9F2;
-    
   }
 
 *{
@@ -20,8 +19,16 @@ html {
 body{
     margin: 0;
     padding: 0;
+    width: 100%;
     overflow-x: hidden;
     font-family: 'Lato', sans-serif;
+}
+
+.main-container{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow-x: hidden !important;
 }
 
 #main-page{
@@ -835,7 +842,7 @@ nav{
     font-size: 0.9em;
     text-align: center;
 }
-
+/* 
 @media screen and (max-width:1050px) {
     .nav-list{
         display: none;
@@ -845,11 +852,10 @@ nav{
 
 @media screen and (max-width: 920px) {
     #main-page{
-        /* font-size: 13px; */
+
     }
     
     .header-description{
-        /* width: 400px; */
     }
 
     #content-box{
@@ -870,4 +876,4 @@ nav{
     .header-description{
         width: 400px;
     }
-}
+} */
