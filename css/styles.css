@@ -94,17 +94,17 @@ nav{
 
 .first-img{
     /* object-fit: cover; */
-    /* left: 28vw; */
+    left: 28vw;
 }
 
 .second-img{
     /* object-fit: cover; */
-    /* left: 27vw; */
+    left: 27vw;
     opacity: 0;
 }
 
 .third-img{
-    /* left: 30vw; */
+    left: 30vw;
     /* top: 200px; */
     /* object-fit: cover; */
     opacity: 0;
@@ -885,6 +885,19 @@ nav{
     .header-bg-gradient{
     background: linear-gradient(180deg, rgba(255,255,255,1) 50%, rgba(255, 255, 255, 0) 100%);
     }
+
+    .first-img{
+        left: 0;
+    }
+    
+    .second-img{
+        left: 0;
+    }
+    
+    .third-img{
+        left: 0;
+    }
+    
 
     .header-bg{
         height: 50%;
