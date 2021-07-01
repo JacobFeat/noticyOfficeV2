@@ -1,5 +1,5 @@
 const changeBtnAll = document.querySelectorAll(".change-bg-btn")
-;
+    ;
 
 const changeFirBtn = document.querySelector(".change-first");
 const changeSecBtn = document.querySelector(".change-second");
@@ -21,39 +21,55 @@ const headerListItemAll = document.querySelectorAll('.header-list-item');
 
 halfImgAll[1].style.width = window.getComputedStyle(halfImgAll[0]).width;
 
+headerListItemAll.forEach(item => {
+    // const itemAnimation = item.animate([
+    //     { right: '-360px', },
+    //     { right: '-40px' }
+    // ], {
+    //     easing: 'cubic-bezier(0.82, -0.1, 0.78, 0.5)',
+    //     duration: 1000,
+    //     fill: 'forwards',
+    //     delay: 2000,
+    // });
 
-setTimeout(() => {
-    headerListItemAll.forEach(item => {
-        item.addEventListener('mouseover', (e) => {
-    
-            if(getComputedStyle(item).right === "-360px"){
-                if(e.target.closest('.item-first')){
-                    item.classList.add('header-list-item-first-active'); 
-                }
-                else if(e.target.closest('.item-second')){
-                    item.classList.add('header-list-item-second-active'); 
-                }
-                
-                else if(e.target.closest('.item-third')){
-                    item.classList.add('header-list-item-third-active'); 
-                }
+    item.addEventListener('mouseover', (e) => {
+
+        if (getComputedStyle(item).right === "-360px") {
+            if (e.target.closest('.item-first')) {
+                item.classList.add('header-list-item-first-active');
             }
-        });
-        item.addEventListener('mouseleave', ()=>{
-            item.classList.remove(item.classList[2]); 
-        })
-    })
-}, 000);
+            else if (e.target.closest('.item-second')) {
+                item.classList.add('header-list-item-second-active');
+            }
+
+            else if (e.target.closest('.item-third')) {
+                item.classList.add('header-list-item-third-active');
+            }
+        }
+    });
+    item.addEventListener('mouseleave', () => {
+        hideContactBar(item);
+    });
+    // document.addEventListener('scroll', ()=>  itemAnimation.pause() );
+});
+
+function hideContactBar(item) {
+    item.classList.remove(item.classList[2]);
+}
+
+document.addEventListener('scroll', () => {
+
+});
 
 document.addEventListener("scroll", debounce(scrollAnimAll, 10));
 
-function scrollAnimAll(e){
+function scrollAnimAll(e) {
     contentAll.forEach(content => {
         scrollAnim(content, 2, 'content-active');
     });
 
-    scrollAnim(notarialTitle, 1, 'notarial-active');
-    scrollAnim(notarialText, 1, 'notarial-active');
+    scrollAnim(notarialTitle, 0.5, 'notarial-active');
+    scrollAnim(notarialText, 0.5, 'notarial-active');
 
     notarialList.forEach(item => {
         scrollAnim(item, 1, 'notarial-active');
@@ -62,13 +78,12 @@ function scrollAnimAll(e){
     halfContentAll.forEach(halfContent => {
         scrollAnim(halfContent, 3, 'half-active');
     })
-
 }
 
-function scrollAnim(item, rate = 2, addedClass){
+function scrollAnim(item, rate = 2, addedClass) {
     const slideInAt = (window.scrollY + window.innerHeight) - item.clientHeight / rate;
     const isHalf = slideInAt > item.offsetTop;
-    if(isHalf){
+    if (isHalf) {
         item.classList.add(addedClass);
     }
 }
@@ -79,51 +94,51 @@ changeThiBtn.addEventListener("click", turnThirdOn);
 
 setTimeout(turnSecondOn, 7000);
 setTimeout(turnThirdOn, 14000);
-setInterval(()=>{
+setInterval(() => {
     setTimeout(turnSecondOn, 7000);
     setTimeout(turnThirdOn, 14000);
     turnFirstOn();
 }, 21000);
 
-function turnFirstOn(){
-    firstBgImg.style.opacity="1";
-    secondBgImg.style.opacity="0";
-    thirdBgImg.style.opacity="0";
-    changeFirBtn.style.background="#C8C8C8";
-    changeSecBtn.style.background="#EAEAEA";
-    changeThiBtn.style.background="#EAEAEA";
+function turnFirstOn() {
+    firstBgImg.style.opacity = "1";
+    secondBgImg.style.opacity = "0";
+    thirdBgImg.style.opacity = "0";
+    changeFirBtn.style.background = "#C8C8C8";
+    changeSecBtn.style.background = "#EAEAEA";
+    changeThiBtn.style.background = "#EAEAEA";
 }
 
-function turnSecondOn(){
-    firstBgImg.style.opacity="0";
-    secondBgImg.style.opacity="1";
-    thirdBgImg.style.opacity="0";
-    changeFirBtn.style.background="#EAEAEA";
-    changeSecBtn.style.background="#C8C8C8";
-    changeThiBtn.style.background="#EAEAEA";
+function turnSecondOn() {
+    firstBgImg.style.opacity = "0";
+    secondBgImg.style.opacity = "1";
+    thirdBgImg.style.opacity = "0";
+    changeFirBtn.style.background = "#EAEAEA";
+    changeSecBtn.style.background = "#C8C8C8";
+    changeThiBtn.style.background = "#EAEAEA";
 }
 
-function turnThirdOn(){
-    firstBgImg.style.opacity="0";
-    secondBgImg.style.opacity="0";
-    thirdBgImg.style.opacity="1";
-    changeFirBtn.style.background="#EAEAEA";
-    changeSecBtn.style.background="#EAEAEA";
-    changeThiBtn.style.background="#C8C8C8";
+function turnThirdOn() {
+    firstBgImg.style.opacity = "0";
+    secondBgImg.style.opacity = "0";
+    thirdBgImg.style.opacity = "1";
+    changeFirBtn.style.background = "#EAEAEA";
+    changeSecBtn.style.background = "#EAEAEA";
+    changeThiBtn.style.background = "#C8C8C8";
 }
 
 //wesbros
 function debounce(func, wait = 20, immediate = true) {
     var timeout;
-    return function() {
-      var context = this, args = arguments;
-      var later = function() {
-        timeout = null;
-        if (!immediate) func.apply(context, args);
-      };
-      var callNow = immediate && !timeout;
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-      if (callNow) func.apply(context, args);
+    return function () {
+        var context = this, args = arguments;
+        var later = function () {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
     };
-  }
+}
