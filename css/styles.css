@@ -66,16 +66,19 @@ nav{
 .nav-list{
     list-style-type: none;
     display: flex;
+    align-items: center;
     position: relative;
+    height: 100%;
 }
 
 .menu-line{
     position: absolute;
     top: 0;
     left: 0;
-    height: 2px;
-    width: 30px;
+    height: 4px;
+    /* width: 70px; */
     background: var(--gold-color);
+    transition: 0.4s ease;
 }
 
 .nav-list li{

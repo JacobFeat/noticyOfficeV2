@@ -10,6 +10,14 @@ const thirdBgImg = document.querySelector(".third-img");
 
 const contentAll = document.querySelectorAll(".content-left, .content-img");
 
+const mainPage = document.querySelector('#main-page');
+const aboutMeBox = document.querySelector('#about-me-box');
+const notarialBox = document.querySelector('#notarial-action-box');
+const textMeBox = document.querySelector('.form-title');
+const contactBox = document.querySelector('#contact-info-container');
+
+const navArr = [mainPage, aboutMeBox, notarialBox, contactBox];
+
 const notarialTitle = document.querySelector('.notarial-action');
 const notarialText = document.querySelector('.notarial-action-text');
 const notarialList = document.querySelectorAll('.notarial-action-list li');
@@ -19,7 +27,22 @@ const halfImgAll = document.querySelectorAll('.half-img');
 
 const headerListItemAll = document.querySelectorAll('.header-list-item');
 
-halfImgAll[1].style.width = window.getComputedStyle(halfImgAll[0]).width;
+const menuLine = document.querySelector('.menu-line');
+const navList = document.querySelector('.nav-list');
+const navItemAll = document.querySelectorAll('.nav-list li');
+
+
+window.addEventListener('load', () => {
+    menuLine.style.width = window.getComputedStyle(navItemAll[0]).width;
+    menuLine.style.left = navItemAll[0].offsetLeft + "px";
+    halfImgAll[1].style.width = window.getComputedStyle(halfImgAll[0]).width;
+
+});
+
+window.addEventListener('resize', () => {
+    halfImgAll[1].style.width = window.getComputedStyle(halfImgAll[0]).width;
+});
+
 
 headerListItemAll.forEach(item => {
     // const itemAnimation = item.animate([
@@ -57,8 +80,34 @@ function hideContactBar(item) {
     item.classList.remove(item.classList[2]);
 }
 
-document.addEventListener('scroll', () => {
 
+navItemAll[0].addEventListener('click', () => {
+    window.scrollTo({
+        top: mainPage.offsetTop,
+        left: 0,
+        behavior: 'smooth'
+    });
+});
+navItemAll[1].addEventListener('click', () => {
+    window.scrollTo({
+        top: aboutMeBox.offsetTop - 200,
+        left: 0,
+        behavior: 'smooth'
+    });
+});
+navItemAll[2].addEventListener('click', () => {
+    window.scrollTo({
+        top: notarialBox.offsetTop - 100,
+        left: 0,
+        behavior: 'smooth'
+    });
+});
+navItemAll[3].addEventListener('click', () => {
+    window.scrollTo({
+        top: contactBox.offsetTop - 0,
+        left: 0,
+        behavior: 'smooth'
+    });
 });
 
 document.addEventListener("scroll", debounce(scrollAnimAll, 10));
@@ -78,6 +127,32 @@ function scrollAnimAll(e) {
     halfContentAll.forEach(halfContent => {
         scrollAnim(halfContent, 3, 'half-active');
     })
+
+    scrollIndicator(e);
+
+}
+
+function menuChanger(posOfElement) {
+    menuLine.style.width = window.getComputedStyle(navItemAll[posOfElement]).width;
+    menuLine.style.left = navItemAll[posOfElement].offsetLeft + "px";
+}
+
+function scrollIndicator(e) {
+    const currentScrollBottom = window.scrollY;
+    if (currentScrollBottom > mainPage.offsetTop) {
+        menuChanger(0);
+    }
+    if (currentScrollBottom > aboutMeBox.offsetTop - 350) {
+        menuChanger(1);
+    }
+
+    if (currentScrollBottom > notarialBox.offsetTop - 200) {
+        menuChanger(2);
+    }
+
+    if (currentScrollBottom > textMeBox.offsetTop - 350) {
+        menuChanger(3);
+    }
 }
 
 function scrollAnim(item, rate = 2, addedClass) {
