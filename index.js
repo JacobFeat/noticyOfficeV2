@@ -45,7 +45,6 @@ setTimeout(() => {
     })
 }, 000);
 
-
 document.addEventListener("scroll", debounce(scrollAnimAll, 10));
 
 function scrollAnimAll(e){

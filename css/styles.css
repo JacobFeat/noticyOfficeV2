@@ -83,29 +83,30 @@ nav{
     height: calc(100vh - 80px);
     width: 100%;
     position: absolute;
-    top: 80px;
+    /* top: 400px; */
+    bottom: 0px;
     left: 0;
     z-index: 0;
     object-fit: cover;
     transition: 1.5s ease;
-    overflow-x: hidden;
+    /* overflow-y: hidden !important; */
 }
 
 .first-img{
     /* object-fit: cover; */
-    left: 28vw;
+    /* left: 28vw; */
 }
 
 .second-img{
-    object-fit: cover;
-    left: 27vw;
+    /* object-fit: cover; */
+    /* left: 27vw; */
     opacity: 0;
 }
 
 .third-img{
-    left: 30vw;
+    /* left: 30vw; */
     /* top: 200px; */
-    object-fit: cover;
+    /* object-fit: cover; */
     opacity: 0;
 }
 
@@ -117,7 +118,7 @@ nav{
     width: 100%;
     z-index: 1;
     background: rgb(255,255,255);
-    background: linear-gradient(100deg, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(100deg, rgba(255,255,255,1) 50%, rgba(255, 255, 255, 0) 100%);
 }
 
 .header-content{
@@ -876,4 +877,100 @@ nav{
     .header-description{
         width: 400px;
     }
+
+    .header-contact-list{
+        display: none;
+    }
+
+    .header-bg-gradient{
+    background: linear-gradient(180deg, rgba(255,255,255,1) 50%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    .header-bg{
+        height: 50%;
+    }
+}
+
+
+@media screen and (max-width: 550px) {
+    
+    nav{
+        /* box-shadow: none; */
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    }
+
+    .logo{
+        height: 26px;
+    }
+    
+    #main-page{
+        font-size: 11px;
+    }
+
+    .header-content{
+    padding: 27vh 0 0 10vw;
+
+    }    .header-content{
+    padding: 27vh 0 0 10vw;
+
+    }
+    
+    .header-description{
+        max-width: 350px;
+    }
+
+    .header-btn{
+        height: 30px;
+        width: 175px;
+        font-size: 1em;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+  
+    nav{
+        padding: 0 20px;
+    }
+
+    .logo{
+        height: 23px;
+    }
+  
+    #main-page{
+        font-size: 9px;
+    }
+    
+    .header-description{
+        max-width: 250px;
+        font-size: 1.4em;
+    }
+
+}
+
+@media screen and (max-width: 360px) {
+  
+    .logo{
+        height: 23px;
+    }
+  
+    #main-page{
+        font-size: 9px;
+    }
+
+    .header-content{
+        padding: 27vh 0 0 5vw;
+    
+    }
+
+    .header-title{
+        font-size: 3em;
+    }
+    
+    .header-description{
+        max-width: 250px;
+        font-size: 1.4em;
+    }
+
 }
