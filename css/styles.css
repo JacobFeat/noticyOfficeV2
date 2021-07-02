@@ -897,6 +897,7 @@ nav{
     
     .header-list-item{
         animation: none;
+        display: none;
     }
 
 }
@@ -913,10 +914,33 @@ nav{
         flex-wrap: wrap;
     }
 
-    .content-left{
-        margin-right: 0;
-        margin-bottom: 100px;
+    #about-me-box{
+        /* margin: 100px 200px; */
     }
+
+    #about-me-box .content-img{
+        height: 382px;
+        width: 340px;
+    }
+
+    #about-me-box .content-left{
+        margin-right: 0;
+        margin-left: 50px;
+        /* margin-bottom: 100px; */
+    }
+}
+
+@media screen and (max-width: 880px) {
+
+    #about-me-box{
+        flex-direction: column;
+    }
+
+    #about-me-box .content-left{
+        margin: 100px 0 0;
+        /* order: 0; */
+    }
+
 }
 
 @media screen and (max-width: 750px) {
@@ -928,9 +952,9 @@ nav{
         width: 400px;
     }
 
-    .header-contact-list{
+    /* .header-contact-list{
         display: none;
-    }
+    } */
 
 
     .header-bg-gradient{
@@ -1014,6 +1038,22 @@ nav{
         font-size: 1em;
     }
 
+    #about-me-box{
+        margin: 100px 0px;
+        font-size: 12px;
+    }   
+    
+    #about-me-box .content-img{
+        height: 338px;
+        width: 300px;
+    }
+
+    #about-me-box .content-left{
+        margin: 100px 0 0;
+        padding: 0 50px;
+        /* order: 0; */
+    }
+
 }
 
 @media screen and (max-width: 450px) {
@@ -1034,6 +1074,15 @@ nav{
     .header-description{
         max-width: 250px;
         font-size: 1.4em;
+    }
+
+    #about-me-box .content-img{
+        height: 315px;
+        width: 270px;
+    }    
+    
+    #about-me-box .content-left{
+        padding: 0 26px;
     }
 
     .notarial-action-text{
@@ -1072,6 +1121,20 @@ nav{
     .header-description{
         max-width: 250px;
         font-size: 1.4em;
+    }
+
+    #about-me-box{
+        /* margin: 100px 30px; */
+        font-size: 12px;
+    }   
+    
+    #about-me-box .content-img{
+        height: 315px;
+        width: 270px;
+    }    
+    
+    #about-me-box .content-left{
+        padding: 0 36px;
     }
 
     .notarial-action-text{
