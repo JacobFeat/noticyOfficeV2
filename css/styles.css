@@ -25,7 +25,6 @@ body{
     width: 100%;
     overflow-x: hidden;
     font-family: 'Lato', sans-serif;
-    /* height: -webkit-fill-available; */
 }
 
 .main-container{
@@ -33,8 +32,6 @@ body{
     width: 100%;
     /* position: relative; */
     overflow-x: hidden !important;
-    height: -webkit-fill-available;
-
 }
 
 #main-page{
