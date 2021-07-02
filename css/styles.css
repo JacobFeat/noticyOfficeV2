@@ -6,6 +6,8 @@
     --white-color: #FCF9F2;
   }
 
+
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -14,6 +16,7 @@
 
 html {
     scroll-behavior: smooth;
+    height: -webkit-fill-available;
   }
 
 body{
@@ -63,6 +66,10 @@ nav{
     height: 35px;
 }
 
+.hamburger{
+    display: none;
+}
+
 .nav-list{
     list-style-type: none;
     display: flex;
@@ -85,17 +92,10 @@ nav{
     padding: 10px 14px;
     margin: 0px 10px;
     cursor: pointer;
-    /* border: 2px solid red; */
 }
-
-.nav-list a{
-    color: var(--green-color);
-    text-decoration: none;
-}
-
 
 .nav-list li:hover{
-
+    color: #466669;
 }
 
 .header-bg{
@@ -143,7 +143,7 @@ nav{
 .header-content{
     /* position: relative; */
     color: var(--green-color);
-    padding: 30vh 0 0 10vw;
+    padding: 34vh 0 0 10vw;
     z-index: 2;
 }
 
@@ -564,7 +564,7 @@ nav{
 }
 
 .half-content{
-    margin: 0 0 0px 50px;
+    margin: 0 0 0px 2vw;
     font-size: 24px;
     font-weight: 400;
     width: 500px;
@@ -602,7 +602,6 @@ nav{
 
 .half-second{
     order: 1;
-    margin-left: 80px;
     /* transform: translateY(30vh); */
 }
 
@@ -848,10 +847,50 @@ nav{
 }
 
 @media screen and (max-width:1050px) {
+  
+    .nav{
+        height: 200px;
+    }
+
+    .hamburger{
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger span{
+        display: block;
+        width: 40px;
+        height: 2px;
+        margin-bottom: 5px;
+        background: var(--green-color);
+    }
+
+    .hamburger span:last-child{
+        margin-bottom: 0;
+    }
+    
     .nav-list{
+        display: none;
+        position: fixed;
+        top: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        flex-direction: column;
+        /* background: #fff; */
+        height: auto;
+        width: 100%;
+        /* box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); */
+
+    }
+
+    .menu-line{
         display: none;
     }
     
+    .header-list-item{
+        animation: none;
+    }
+
 }
 
 @media screen and (max-width: 920px) {
@@ -885,6 +924,7 @@ nav{
         display: none;
     }
 
+
     .header-bg-gradient{
     background: linear-gradient(180deg, rgba(255,255,255,1) 50%, rgba(255, 255, 255, 0) 100%);
     }
@@ -914,11 +954,11 @@ nav{
         /* box-shadow: none; */
         box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
         box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-        height: 70px;
+        /* height: 70px; */
     }
 
     .logo{
-        height: 26px;
+        height: 28px;
     }
     
     #main-page{
@@ -951,7 +991,7 @@ nav{
   
     nav{
         padding: 0 20px;
-        height: 60px;
+        height: 70px;
     }
 
     .logo{
