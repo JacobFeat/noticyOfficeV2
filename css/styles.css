@@ -25,7 +25,7 @@ body{
     width: 100%;
     overflow-x: hidden;
     font-family: 'Lato', sans-serif;
-    height: -webkit-fill-available;
+    /* height: -webkit-fill-available; */
 }
 
 .main-container{
@@ -43,7 +43,6 @@ body{
     color: var(--green-color);
     overflow-x: hidden;
     height: 100vh;
-    height: -webkit-fill-available;
 }
 
 nav{
@@ -1041,7 +1040,7 @@ nav{
     }
 
     #about-me-box{
-        margin: 100px 0px;
+        margin: 200px 0px;
         font-size: 12px;
     }   
     
@@ -1051,7 +1050,7 @@ nav{
     }
 
     #about-me-box .content-left{
-        margin: 100px 0 0;
+        margin: 200px 0 0;
         padding: 0 50px;
         /* order: 0; */
     }
