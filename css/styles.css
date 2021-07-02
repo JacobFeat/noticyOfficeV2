@@ -700,6 +700,8 @@ nav{
     background: #EEE;
     border: none;
     height: 30px;
+    -webkit-appearance: none;
+    border-radius: 0;
 }
 
 .form-input:focus{
@@ -713,6 +715,8 @@ nav{
 
 .text-input{
     height: 160px;
+    padding: 20px;
+    resize: none;
 }
 
 .form-submit{
@@ -727,7 +731,6 @@ nav{
     font-weight: 600;
     letter-spacing: 1.5px;
     cursor: pointer;
-    -webkit-appearance: none;
 }
 
 #contact-info-container{
