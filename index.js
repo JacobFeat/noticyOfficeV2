@@ -1,5 +1,6 @@
-const changeBtnAll = document.querySelectorAll(".change-bg-btn")
-    ;
+const changeBtnAll = document.querySelectorAll(".change-bg-btn");
+
+const headerBgAll = document.querySelectorAll('.header-bg');
 
 const changeFirBtn = document.querySelector(".change-first");
 const changeSecBtn = document.querySelector(".change-second");
@@ -37,6 +38,19 @@ window.addEventListener('load', () => {
     menuLine.style.left = navItemAll[0].offsetLeft + "px";
     halfImgAll[1].style.width = window.getComputedStyle(halfImgAll[0]).width;
 
+    //change bg img to mobile version
+    if(window.innerWidth<751){
+        headerBgAll.forEach(bg => {
+            let link = bg.src;
+            const linkStr = 'main-bg/';
+            let linkStrIndex = link.indexOf(linkStr);
+            let firstPart = link.substring(0, linkStrIndex+8);
+            const mobile = 'mobile/';
+            let secondPart = link.substring(linkStrIndex+8, link.length);
+            let changedLink = firstPart + mobile + secondPart;
+            bg.src = changedLink;
+        });
+    }
 });
 
 window.addEventListener('resize', () => {
@@ -118,7 +132,7 @@ function scrollAnimAll(e) {
     });
 
     scrollAnim(notarialTitle, 0.5, 'notarial-active');
-    scrollAnim(notarialText, 0.5, 'notarial-active');
+    scrollAnim(notarialText, 1, 'notarial-active');
 
     notarialList.forEach(item => {
         scrollAnim(item, 1, 'notarial-active');
