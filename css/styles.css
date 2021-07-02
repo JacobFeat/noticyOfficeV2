@@ -25,6 +25,7 @@ body{
     width: 100%;
     overflow-x: hidden;
     font-family: 'Lato', sans-serif;
+    height: -webkit-fill-available;
 }
 
 .main-container{
@@ -42,6 +43,7 @@ body{
     color: var(--green-color);
     overflow-x: hidden;
     height: 100vh;
+    height: -webkit-fill-available;
 }
 
 nav{
