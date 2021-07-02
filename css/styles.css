@@ -31,6 +31,7 @@ body{
     height: 100%;
     width: 100%;
     /* position: relative; */
+    height: -webkit-fill-available;
     overflow-x: hidden !important;
 }
 
@@ -41,6 +42,7 @@ body{
     left: 0;
     color: var(--green-color);
     overflow-x: hidden;
+    height: -webkit-fill-available;
     height: 100vh;
 }
 
