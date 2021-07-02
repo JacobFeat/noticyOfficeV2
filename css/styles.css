@@ -692,6 +692,10 @@ nav{
 }
 
 .form-input{
+    padding: 0 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--green-color);
     margin-top: 6px;
     background: #EEE;
     border: none;
@@ -723,6 +727,7 @@ nav{
     font-weight: 600;
     letter-spacing: 1.5px;
     cursor: pointer;
+    -webkit-appearance: none;
 }
 
 #contact-info-container{
