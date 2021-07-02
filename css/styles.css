@@ -676,7 +676,7 @@ nav{
     font-size: 32px;
     color: var(--green-color);
     margin: 0 auto 200px;
-    width: 900px;
+    max-width: 900px;
     flex-wrap: wrap;
 }
 
@@ -1041,6 +1041,24 @@ nav{
         padding-left: 50px;
     }
 
+    .form-container{
+        padding: 0 50px;
+        flex-direction: column;
+        /* align-items: center; */
+        justify-content: flex-start;
+        margin-bottom: 160px;
+        font-size: 28px;
+    }
+
+    .form-title{
+        margin: 160px 0 30px;
+    }
+
+    .form-box{
+        margin: 15px 0;
+        width: 100%;
+    }
+
 
 }
 
@@ -1098,6 +1116,10 @@ nav{
         /* order: 0; */
     }
 
+    .form-container{
+        padding: 0 30px;
+    }
+
 }
 
 @media screen and (max-width: 450px) {
@@ -1143,6 +1165,14 @@ nav{
 
     .half-content{
         padding: 0 30px;
+    }
+
+    .form-title{
+        font-size: 30px;
+    }
+
+    .form-container{
+        font-size: 26px;
     }
 
 }
@@ -1191,6 +1221,10 @@ nav{
 
     .notarial-action-list li{
         width: 270px;
+    }
+
+    .form-container{
+        padding: 0 20px;
     }
 
 
