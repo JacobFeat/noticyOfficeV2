@@ -385,13 +385,6 @@ nav{
     transition: 0.5s ease; 
 }
 
-#content-box > .content-left{
-    transform: translateX(-50%);
-}
-
-#content-box > .content-img{
-    transform: translateX(50%);
-}
 
 #about-me-box > .content-left{
     transform: translateX(50%);
@@ -858,7 +851,6 @@ nav{
     transform: translateX(50%);
     opacity: 0;
     /* flex-basis: 50%; */
-
 }
 
 .map{
@@ -1116,6 +1108,14 @@ nav{
         text-align: center !important;
     }   
 
+    #about-me-box > .content-left{
+        transform: translateY(50%);
+    }
+    
+    #about-me-box > .content-img{
+        transform: translateY(50%);
+    }
+
     .two-halves{
         flex-direction: column;
     }
@@ -1157,6 +1157,14 @@ nav{
     .form-box{
         margin: 15px 0;
         width: 100%;
+    }
+
+    /* #contact-info-container{
+        overflow-y: hidden;
+    } */
+
+    .map-box{
+        transform: translateX(-50%);
     }
 
 
