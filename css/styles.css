@@ -1014,7 +1014,7 @@ nav{
 
 
     .header-bg-gradient{
-    background: linear-gradient(180deg, rgba(255,255,255,1) 50%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 60%, rgba(255, 255, 255, 0) 100%);
     }
 
     .first-img{
@@ -1145,6 +1145,7 @@ nav{
     
     .header-description{
         max-width: 350px;
+        font-size: 1.6em;
     }
 
     .header-btn{
@@ -1210,7 +1211,7 @@ nav{
     
     .header-description{
         max-width: 250px;
-        font-size: 1.4em;
+        font-size: 1.67em;
     }
 
     #about-me-box .content-img{
@@ -1283,11 +1284,11 @@ nav{
     }
   
     #main-page{
-        font-size: 9px;
+        font-size: 10px;
     }
 
     .header-content{
-        padding: 27vh 0 0 5vw;
+        /* padding: 27vh 0 0 5vw; */
     
     }
 
