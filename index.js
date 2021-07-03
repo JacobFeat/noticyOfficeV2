@@ -41,25 +41,6 @@ const firstHam = document.querySelector('.first-ham');
 const secondHam = document.querySelector('.second-ham');
 const thirdHam = document.querySelector('.third-ham');
 
-navItemAll.forEach(item => {
-    item.addEventListener('click', () => {
-        if(window.innerWidth<1051){
-            firstHam.classList.remove('ham-vis-active');
-            secondHam.classList.remove('ham-hid-active');
-            thirdHam.classList.remove('ham-vis-active-minus');
-            navList.classList.remove('hamburger-active');
-
-        }
-    })
-});
-
-
-hamburger.addEventListener('click', () => {
-    firstHam.classList.toggle('ham-vis-active');
-    secondHam.classList.toggle('ham-hid-active');
-    thirdHam.classList.toggle('ham-vis-active-minus');
-    navList.classList.toggle('hamburger-active');
-})
 
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -93,7 +74,7 @@ window.addEventListener('load', () => {
 window.addEventListener('resize', () => {
     halfImgAll[1].style.width = window.getComputedStyle(halfImgAll[0]).width;
     let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    // document.documentElement.style.setProperty('--vh', `${vh}px`);
 });
 
 
@@ -162,6 +143,27 @@ navItemAll[3].addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
+
+
+navItemAll.forEach(item => {
+    item.addEventListener('click', () => {
+        if(window.innerWidth<1051){
+            firstHam.classList.remove('ham-vis-active');
+            secondHam.classList.remove('ham-hid-active');
+            thirdHam.classList.remove('ham-vis-active-minus');
+            navList.classList.remove('hamburger-active');
+
+        }
+    })
+});
+
+
+hamburger.addEventListener('click', () => {
+    firstHam.classList.toggle('ham-vis-active');
+    secondHam.classList.toggle('ham-hid-active');
+    thirdHam.classList.toggle('ham-vis-active-minus');
+    navList.classList.toggle('hamburger-active');
+})
 
 document.addEventListener("scroll", debounce(scrollAnimAll, 5));
 
