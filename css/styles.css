@@ -971,6 +971,14 @@ nav{
         text-align: center;
         border-bottom: 2px solid #F2F4F4;
         z-index: 6;
+        visibility:hidden;
+        pointer-events: none;
+        transition: 0.4s;
+    }
+
+    .list-item-active{
+        visibility:visible !important;
+        pointer-events: auto !important;
     }
 
     .nav-list li:last-of-type{
