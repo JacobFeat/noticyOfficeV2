@@ -156,15 +156,26 @@ navItemAll.forEach(item => {
     })
 });
 
-
 hamburger.addEventListener('click', () => {
     firstHam.classList.toggle('ham-vis-active');
     secondHam.classList.toggle('ham-hid-active');
     thirdHam.classList.toggle('ham-vis-active-minus');
     navList.classList.toggle('hamburger-active');
-    navItemAll.forEach(item => {
-        item.classList.toggle('list-item-active');
-    });
+    if(navList.classList[1] === "hamburger-active"){
+        navItemAll.forEach(item => {
+            item.style.visibility = "visible";
+            item.style.pointerEvents = "auto";
+        });
+    }
+    else{
+        navItemAll.forEach(item => {
+            item.style.visibility = "hidden";
+            item.style.pointerEvents = "none";
+        });
+    }
+    // navItemAll.forEach(item => {
+    //     item.classList.toggle('list-item-active');
+    // });
 })
 
 document.addEventListener("scroll", debounce(scrollAnimAll, 5));

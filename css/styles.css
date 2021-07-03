@@ -977,8 +977,6 @@ nav{
     }
 
     .list-item-active{
-        visibility:visible !important;
-        pointer-events: auto !important;
     }
 
     .nav-list li:last-of-type{
