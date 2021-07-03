@@ -36,6 +36,8 @@ const navItemAll = document.querySelectorAll('.nav-list li');
 const contactContent = document.querySelector('.contact-content');
 const contactMap = document.querySelector('.map-box');
 
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 window.addEventListener('load', () => {
     menuLine.style.width = window.getComputedStyle(navItemAll[0]).width;
@@ -65,6 +67,8 @@ window.addEventListener('load', () => {
 
 window.addEventListener('resize', () => {
     halfImgAll[1].style.width = window.getComputedStyle(halfImgAll[0]).width;
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
 });
 
 
