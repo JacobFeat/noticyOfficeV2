@@ -893,38 +893,93 @@ nav{
 @media screen and (max-width:1050px) {
   
     .nav{
-        height: 200px;
+        height: 400px;
     }
 
     .hamburger{
         display: block;
         cursor: pointer;
+        position: relative;
+        height: 16px;
+        width: 40px;
     }
 
     .hamburger span{
+        position: absolute;
+        /* top: 0; */
+        left: 0;
         display: block;
         width: 40px;
         height: 2px;
         margin-bottom: 5px;
         background: var(--green-color);
+        transition: 0.4s ease;
     }
 
     .hamburger span:last-child{
         margin-bottom: 0;
     }
+
+    .first-ham{
+        transform: translateY(50%);
+        transition: 0.4s ease;
+        /* transform-origin: left; */
+        top: 0%;
+    }
+
+    .second-ham{
+        top: 50%;
+    }
+
+    .third-ham{
+        transition: 0.4s ease;
+        top: 100%;
+    }
+
+    .ham-vis-active{
+        top: 50%;
+        transform: rotate(45deg);
+    } 
+
+    .ham-vis-active-minus{
+        top: 50%;
+        transform: rotate(-45deg);
+    }
+
+    .ham-hid-active{
+        opacity: 0;
+        transition: 0.2s !important;
+    }
     
     .nav-list{
-        display: none;
+        /* display: none; */
         position: fixed;
         top: 80px;
         left: 50%;
         transform: translateX(-50%);
         flex-direction: column;
-        /* background: #fff; */
+        background: #fff;
         height: auto;
         width: 100%;
+        color: var(--green-color);
         /* box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); */
+        /* border: 1px solid black; */
+        /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); */
+    }
 
+    .nav-list li{
+        padding: 14px 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+        border-bottom: 2px solid #F2F4F4;
+        z-index: 6;
+    }
+
+    .nav-list li:last-of-type{
+        border-bottom: none;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        z-index: 5;
     }
 
     .menu-line{
@@ -1199,6 +1254,10 @@ nav{
     nav{
         padding: 0 20px;
         height: 70px;
+    }
+
+    .nav-list{
+        top: 70px;
     }
 
     .logo{

@@ -36,6 +36,17 @@ const navItemAll = document.querySelectorAll('.nav-list li');
 const contactContent = document.querySelector('.contact-content');
 const contactMap = document.querySelector('.map-box');
 
+const hamburger = document.querySelector('.hamburger');
+const firstHam = document.querySelector('.first-ham');
+const secondHam = document.querySelector('.second-ham');
+const thirdHam = document.querySelector('.third-ham');
+
+hamburger.addEventListener('click', () => {
+    firstHam.classList.toggle('ham-vis-active');
+    secondHam.classList.toggle('ham-hid-active');
+    thirdHam.classList.toggle('ham-vis-active-minus');
+})
+
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
