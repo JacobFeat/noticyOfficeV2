@@ -153,6 +153,25 @@ navItemAll.forEach(item => {
             thirdHam.classList.remove('ham-vis-active-minus');
             navList.classList.remove('hamburger-active');
         }
+        if(navList.classList[1] === "hamburger-active"){
+            navItemAll.forEach(item => {
+                item.style.visibility = "visible";
+                item.style.pointerEvents = "auto";
+                item.style.touchAction = "auto";
+                item.style.display = "block";
+            });
+        }
+        else{
+            navItemAll.forEach(item => {
+                item.style.visibility = "hidden";
+                item.style.pointerEvents = "none";
+                item.style.touchAction = "none";
+                (setTimeout(()=>{
+                    item.style.display = "none";
+                }, 500));
+    
+            });
+        }
     });
 
     item.addEventListener('touchstart', (e) => {
@@ -175,6 +194,7 @@ hamburger.addEventListener('click', () => {
             item.style.visibility = "visible";
             item.style.pointerEvents = "auto";
             item.style.touchAction = "auto";
+            item.style.display = "block";
         });
     }
     else{
@@ -182,6 +202,10 @@ hamburger.addEventListener('click', () => {
             item.style.visibility = "hidden";
             item.style.pointerEvents = "none";
             item.style.touchAction = "none";
+            (setTimeout(()=>{
+                item.style.display = "none";
+            }, 500));
+
         });
     }
 
