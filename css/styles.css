@@ -1190,6 +1190,13 @@ nav{
         padding: 0 50px;
         width: 100%;
     }
+
+    #notarial-action-box{
+        background: 
+        linear-gradient(0deg, hsl(185, 20%, 22%, 0.95), hsl(185, 20%, 22%, 0.95)), url("../images/6.jpg");
+        background-size: cover;
+        background-position: 30%;
+    }
 }
 
 
