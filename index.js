@@ -45,6 +45,7 @@ hamburger.addEventListener('click', () => {
     firstHam.classList.toggle('ham-vis-active');
     secondHam.classList.toggle('ham-hid-active');
     thirdHam.classList.toggle('ham-vis-active-minus');
+    navList.classList.toggle('hamburger-active');
 })
 
 let vh = window.innerHeight * 0.01;
