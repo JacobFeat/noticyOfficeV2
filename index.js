@@ -150,7 +150,7 @@ navItemAll[3].addEventListener('click', () => {
     });
 });
 
-document.addEventListener("scroll", debounce(scrollAnimAll, 10));
+document.addEventListener("scroll", debounce(scrollAnimAll, 5));
 
 function scrollAnimAll(e) {
     contentAll.forEach(content => {
