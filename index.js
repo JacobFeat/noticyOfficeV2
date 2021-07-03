@@ -153,7 +153,16 @@ navItemAll.forEach(item => {
             thirdHam.classList.remove('ham-vis-active-minus');
             navList.classList.remove('hamburger-active');
         }
-    })
+    });
+
+    item.addEventListener('touchstart', (e) => {
+        if(navList.classList[1] !== "hamburger-active"){
+            e.preventDefault();
+        }
+        else{
+        
+        }
+    });
 });
 
 hamburger.addEventListener('click', () => {
@@ -175,6 +184,8 @@ hamburger.addEventListener('click', () => {
             item.style.touchAction = "none";
         });
     }
+
+
     // navItemAll.forEach(item => {
     //     item.classList.toggle('list-item-active');
     // });
