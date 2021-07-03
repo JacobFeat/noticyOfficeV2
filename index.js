@@ -17,6 +17,7 @@ const notarialBox = document.querySelector('#notarial-action-box');
 const textMeBox = document.querySelector('.form-title');
 const contactBox = document.querySelector('#contact-info-container');
 
+
 const navArr = [mainPage, aboutMeBox, notarialBox, contactBox];
 
 const notarialTitle = document.querySelector('.notarial-action');
@@ -32,11 +33,20 @@ const menuLine = document.querySelector('.menu-line');
 const navList = document.querySelector('.nav-list');
 const navItemAll = document.querySelectorAll('.nav-list li');
 
+const contactContent = document.querySelector('.contact-content');
+const contactMap = document.querySelector('.map-box');
+
 
 window.addEventListener('load', () => {
     menuLine.style.width = window.getComputedStyle(navItemAll[0]).width;
     menuLine.style.left = navItemAll[0].offsetLeft + "px";
     halfImgAll[1].style.width = window.getComputedStyle(halfImgAll[0]).width;
+
+    if(window.innerWidth<1050){
+        contactContent.style.position = "relative";
+        const contactDistance = contactContent.offsetLeft - contactMap.offsetLeft;
+        contactContent.style.left = `-${contactDistance}px`;
+    }
 
     //change bg img to mobile version
     if(window.innerWidth<751){
@@ -141,6 +151,9 @@ function scrollAnimAll(e) {
     halfContentAll.forEach(halfContent => {
         scrollAnim(halfContent, 3, 'half-active');
     })
+
+    scrollAnim(contactContent, 2, 'content-active');
+    scrollAnim(contactMap, 2, 'content-active');
 
     scrollIndicator(e);
 
