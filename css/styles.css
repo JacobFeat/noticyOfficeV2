@@ -705,7 +705,9 @@ nav{
 }
 
 .form-input:focus{
-    border: none;
+    outline: none;
+    border: 2px solid var(--green-color);
+    padding: 0 8px;
 }
 
 .form-text{
@@ -715,9 +717,14 @@ nav{
 
 .text-input{
     height: 160px;
-    padding: 20px;
+    padding: 10px;
     resize: none;
 }
+
+.text-input:focus{
+    padding: 8px;
+}
+
 
 .form-submit{
     width: 660px;
