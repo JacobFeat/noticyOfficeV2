@@ -41,6 +41,19 @@ const firstHam = document.querySelector('.first-ham');
 const secondHam = document.querySelector('.second-ham');
 const thirdHam = document.querySelector('.third-ham');
 
+navItemAll.forEach(item => {
+    item.addEventListener('click', () => {
+        if(window.innerWidth<1051){
+            firstHam.classList.remove('ham-vis-active');
+            secondHam.classList.remove('ham-hid-active');
+            thirdHam.classList.remove('ham-vis-active-minus');
+            navList.classList.remove('hamburger-active');
+
+        }
+    })
+});
+
+
 hamburger.addEventListener('click', () => {
     firstHam.classList.toggle('ham-vis-active');
     secondHam.classList.toggle('ham-hid-active');
