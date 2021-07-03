@@ -973,6 +973,7 @@ nav{
         z-index: 6;
         visibility:hidden;
         pointer-events: none;
+        touch-action: none;
         transition: 0.4s;
     }
 

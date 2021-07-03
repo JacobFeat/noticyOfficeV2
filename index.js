@@ -165,12 +165,14 @@ hamburger.addEventListener('click', () => {
         navItemAll.forEach(item => {
             item.style.visibility = "visible";
             item.style.pointerEvents = "auto";
+            item.style.touchAction = "auto";
         });
     }
     else{
         navItemAll.forEach(item => {
             item.style.visibility = "hidden";
             item.style.pointerEvents = "none";
+            item.style.touchAction = "none";
         });
     }
     // navItemAll.forEach(item => {
