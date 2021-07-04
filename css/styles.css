@@ -283,6 +283,17 @@ nav{
     }
 }
 
+@keyframes stop_header_contact_hide {
+    0%{
+        right: -40px;
+        background-color: hsl(0,0%,100%, 1);
+    }
+    100%{
+        right: -360px;
+        background-color: hsl(0,0%,100%, 0.8);
+    }
+}
+
 
 .header-list-item a{
     text-decoration: none;

@@ -209,13 +209,23 @@ hamburger.addEventListener('click', () => {
         });
     }
 
-
-    // navItemAll.forEach(item => {
-    //     item.classList.toggle('list-item-active');
-    // });
 })
 
 document.addEventListener("scroll", debounce(scrollAnimAll, 5));
+
+document.addEventListener('scroll',finishHeaderContactAnim);
+
+changeFirBtn.addEventListener("click", turnFirstOn);
+changeSecBtn.addEventListener("click", turnSecondOn);
+changeThiBtn.addEventListener("click", turnThirdOn);
+
+setTimeout(turnSecondOn, 7000);
+setTimeout(turnThirdOn, 14000);
+setInterval(() => {
+    setTimeout(turnSecondOn, 7000);
+    setTimeout(turnThirdOn, 14000);
+    turnFirstOn();
+}, 21000);
 
 function scrollAnimAll(e) {
     contentAll.forEach(content => {
@@ -271,17 +281,16 @@ function scrollAnim(item, rate = 2, addedClass) {
     }
 }
 
-changeFirBtn.addEventListener("click", turnFirstOn);
-changeSecBtn.addEventListener("click", turnSecondOn);
-changeThiBtn.addEventListener("click", turnThirdOn);
+function finishHeaderContactAnim(){
+    headerListItemAll.forEach(item => {
+        console.log(getComputedStyle(item).right)
+        if(getComputedStyle(item).right === "-40px"){
+            item.style.animation = "stop_header_contact_hide forwards 0.5s cubic-bezier(0.82, -0.1, 0.78, 0.5)";
+        }
+    });
+}
 
-setTimeout(turnSecondOn, 7000);
-setTimeout(turnThirdOn, 14000);
-setInterval(() => {
-    setTimeout(turnSecondOn, 7000);
-    setTimeout(turnThirdOn, 14000);
-    turnFirstOn();
-}, 21000);
+
 
 function turnFirstOn() {
     firstBgImg.style.opacity = "1";
