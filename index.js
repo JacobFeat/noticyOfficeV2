@@ -77,7 +77,7 @@ window.addEventListener('resize', () => {
     // document.documentElement.style.setProperty('--vh', `${vh}px`);
     console.log(`first: ${vh}, second: ${vhSec}, result: ${vh - vhSec}`);
     // console.log(vhSec);
-    if(vh - vhSec > 1 || vh - vhSec < -1 || vh -vhSec == 0){
+    if(vh - vhSec > 1.6 || vh - vhSec < -1.6 || vh -vhSec == 0){
         document.documentElement.style.setProperty  ('--vh', `${vhSec}px`);
     }
 });
