@@ -43,6 +43,7 @@ body{
     overflow-x: hidden;
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
+    min-height: 560px;
 }
 
 nav{
@@ -103,6 +104,7 @@ nav{
     height: calc(100vh - 80px);
     height: calc(var(--vh, 1vh) * 100 - 80px);
     width: 100%;
+    min-height: 480px;
     position: absolute;
     /* top: 400px; */
     bottom: 0px;
@@ -137,6 +139,7 @@ nav{
     left: 0;
     height: calc(100vh - 80px);
     height: calc(var(--vh, 1vh) * 100 - 80px);
+    min-height: 480px;
     width: 100%;
     z-index: 1;
     background: rgb(255,255,255);
@@ -988,9 +991,6 @@ nav{
         transition: 0.4s;
     }
 
-    .list-item-active{
-    }
-
     .nav-list li:last-of-type{
         border-bottom: 2px solid #cecece;
         z-index: 5;
@@ -1020,19 +1020,9 @@ nav{
 }
 
 @media screen and (max-width: 920px) {
-    #main-page{
-
-    }
     
-    .header-description{
-    }
-
     #content-box{
         flex-wrap: wrap;
-    }
-
-    #about-me-box{
-        /* margin: 100px 200px; */
     }
 
     #about-me-box .content-img{
@@ -1196,14 +1186,6 @@ nav{
         padding: 0 50px;
     }
 
-    .map-text{
-        /* text-align: left; */
-    }
-
-    #contact-info-container{
-        /* padding: 100px 50px; */
-    }
-
     .contact-content{
         padding: 0 50px;
         width: 100%;
@@ -1280,20 +1262,11 @@ nav{
 
 @media screen and (max-width: 500px) {
     
-    .contact-content{
-        /* padding: 0 50px; */
-        /* width: 350px; */
-    }
-
     .contact-content > p{
         overflow-wrap: break-word;
         inline-size: 350px;
     }
     
-    .map-box{
-        /* width: 350px; */
-    }
-
 }
 
 @media screen and (max-width: 450px) {
@@ -1378,11 +1351,6 @@ nav{
         font-size: 10px;
     }
 
-    .header-content{
-        /* padding: 27vh 0 0 5vw; */
-    
-    }
-
     .header-title{
         font-size: 3em;
     }
@@ -1425,4 +1393,8 @@ nav{
     .map-box{
         padding: 0 20px;
     }
+}
+
+@media screen and (orientation: landscape) {
+    
 }
