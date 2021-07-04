@@ -73,8 +73,13 @@ window.addEventListener('load', () => {
 
 window.addEventListener('resize', () => {
     halfImgAll[1].style.width = window.getComputedStyle(halfImgAll[0]).width;
-    let vh = window.innerHeight * 0.01;
+    let vhSec = window.innerHeight * 0.01;
     // document.documentElement.style.setProperty('--vh', `${vh}px`);
+    console.log(`first: ${vh}, second: ${vhSec}, result: ${vh - vhSec}`);
+    // console.log(vhSec);
+    if(vh - vhSec > 1 || vh - vhSec < -1 || vh -vhSec == 0){
+        document.documentElement.style.setProperty  ('--vh', `${vhSec}px`);
+    }
 });
 
 
@@ -171,17 +176,6 @@ navItemAll.forEach(item => {
                     }, 500));
 
                 });
-            }
-        }
-    });
-
-    item.addEventListener('touchstart', (e) => {
-        if (window.innerWidth < 1051){
-            if (navList.classList[1] !== "hamburger-active") {
-                e.preventDefault();
-            }
-            else {
-    
             }
         }
     });
@@ -286,7 +280,6 @@ function scrollAnim(item, rate = 2, addedClass) {
 
 function finishHeaderContactAnim() {
     headerListItemAll.forEach(item => {
-        console.log(getComputedStyle(item).right)
         if (getComputedStyle(item).right === "-40px") {
             item.style.animation = "stop_header_contact_hide forwards 0.5s cubic-bezier(0.82, -0.1, 0.78, 0.5)";
         }

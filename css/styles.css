@@ -1076,6 +1076,10 @@ nav{
     background: linear-gradient(180deg, rgba(255,255,255,1) 60%, rgba(255, 255, 255, 0) 100%);
     }
 
+    .header-bg{
+        min-height: 140px;
+    }
+
     .first-img{
         left: 0;
     }
@@ -1397,4 +1401,10 @@ nav{
 
 @media screen and (orientation: landscape) {
     
+}
+
+@media screen and (orientation: portrait) {
+    .header-bg{
+        min-height: 140px;
+    }
 }
