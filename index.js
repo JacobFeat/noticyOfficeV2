@@ -50,21 +50,21 @@ window.addEventListener('load', () => {
     menuLine.style.left = navItemAll[0].offsetLeft + "px";
     halfImgAll[1].style.width = window.getComputedStyle(halfImgAll[0]).width;
 
-    if(window.innerWidth<1050){
+    if (window.innerWidth < 1050) {
         contactContent.style.position = "relative";
         const contactDistance = contactContent.offsetLeft - contactMap.offsetLeft;
         contactContent.style.left = `-${contactDistance}px`;
     }
 
     //change bg img to mobile version
-    if(window.innerWidth<751){
+    if (window.innerWidth < 751) {
         headerBgAll.forEach(bg => {
             let link = bg.src;
             const linkStr = 'main-bg/';
             let linkStrIndex = link.indexOf(linkStr);
-            let firstPart = link.substring(0, linkStrIndex+8);
+            let firstPart = link.substring(0, linkStrIndex + 8);
             const mobile = 'mobile/';
-            let secondPart = link.substring(linkStrIndex+8, link.length);
+            let secondPart = link.substring(linkStrIndex + 8, link.length);
             let changedLink = firstPart + mobile + secondPart;
             bg.src = changedLink;
         });
@@ -147,39 +147,42 @@ navItemAll[3].addEventListener('click', () => {
 
 navItemAll.forEach(item => {
     item.addEventListener('click', () => {
-        if(window.innerWidth<1051){
+        if (window.innerWidth < 1051) {
             firstHam.classList.remove('ham-vis-active');
             secondHam.classList.remove('ham-hid-active');
             thirdHam.classList.remove('ham-vis-active-minus');
             navList.classList.remove('hamburger-active');
-        }
-        if(navList.classList[1] === "hamburger-active"){
-            navItemAll.forEach(item => {
-                item.style.visibility = "visible";
-                item.style.pointerEvents = "auto";
-                item.style.touchAction = "auto";
-                item.style.display = "block";
-            });
-        }
-        else{
-            navItemAll.forEach(item => {
-                item.style.visibility = "hidden";
-                item.style.pointerEvents = "none";
-                item.style.touchAction = "none";
-                (setTimeout(()=>{
-                    item.style.display = "none";
-                }, 500));
-    
-            });
+
+            if (navList.classList[1] === "hamburger-active") {
+                navItemAll.forEach(item => {
+                    item.style.visibility = "visible";
+                    item.style.pointerEvents = "auto";
+                    item.style.touchAction = "auto";
+                    item.style.display = "block";
+                });
+            }
+            else {
+                navItemAll.forEach(item => {
+                    item.style.visibility = "hidden";
+                    item.style.pointerEvents = "none";
+                    item.style.touchAction = "none";
+                    (setTimeout(() => {
+                        item.style.display = "none";
+                    }, 500));
+
+                });
+            }
         }
     });
 
     item.addEventListener('touchstart', (e) => {
-        if(navList.classList[1] !== "hamburger-active"){
-            e.preventDefault();
-        }
-        else{
-        
+        if (window.innerWidth < 1051){
+            if (navList.classList[1] !== "hamburger-active") {
+                e.preventDefault();
+            }
+            else {
+    
+            }
         }
     });
 });
@@ -189,7 +192,7 @@ hamburger.addEventListener('click', () => {
     secondHam.classList.toggle('ham-hid-active');
     thirdHam.classList.toggle('ham-vis-active-minus');
     navList.classList.toggle('hamburger-active');
-    if(navList.classList[1] === "hamburger-active"){
+    if (navList.classList[1] === "hamburger-active") {
         navItemAll.forEach(item => {
             item.style.visibility = "visible";
             item.style.pointerEvents = "auto";
@@ -197,12 +200,12 @@ hamburger.addEventListener('click', () => {
             item.style.display = "block";
         });
     }
-    else{
+    else {
         navItemAll.forEach(item => {
             item.style.visibility = "hidden";
             item.style.pointerEvents = "none";
             item.style.touchAction = "none";
-            (setTimeout(()=>{
+            (setTimeout(() => {
                 item.style.display = "none";
             }, 500));
 
@@ -213,7 +216,7 @@ hamburger.addEventListener('click', () => {
 
 document.addEventListener("scroll", debounce(scrollAnimAll, 5));
 
-document.addEventListener('scroll',finishHeaderContactAnim);
+document.addEventListener('scroll', finishHeaderContactAnim);
 
 changeFirBtn.addEventListener("click", turnFirstOn);
 changeSecBtn.addEventListener("click", turnSecondOn);
@@ -281,10 +284,10 @@ function scrollAnim(item, rate = 2, addedClass) {
     }
 }
 
-function finishHeaderContactAnim(){
+function finishHeaderContactAnim() {
     headerListItemAll.forEach(item => {
         console.log(getComputedStyle(item).right)
-        if(getComputedStyle(item).right === "-40px"){
+        if (getComputedStyle(item).right === "-40px") {
             item.style.animation = "stop_header_contact_hide forwards 0.5s cubic-bezier(0.82, -0.1, 0.78, 0.5)";
         }
     });
