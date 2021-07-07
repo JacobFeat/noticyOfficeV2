@@ -31,10 +31,15 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     color: var(--white-color);
     font-size: 24px;
 }
+
+.container *{
+    margin: 50px 0;
+}
+
 
 .container a{
     font-weight: 300;
