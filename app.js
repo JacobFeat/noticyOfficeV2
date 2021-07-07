@@ -7,11 +7,12 @@ const nodemailer = require('nodemailer');
 const app = express();
 
 app.use(express.static("public"));//display css and js
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/", function(req, res){
+app.get("/", function (req, res) {
     res.sendFile(__dirname + "/index.html");
-  });
+});
+
 
 app.post('/send', (req, res) => {
     const output = `
@@ -62,7 +63,10 @@ app.post('/send', (req, res) => {
     });
 });
 
-app.listen(process.env.PORT || 4000, function(){
-    console.log(`Server started on port `);
+app.get("/send", function(req, res){
+    res.sendFile(__dirname + "/success.html");
   });
-  
+
+app.listen(process.env.PORT || 4000, function () {
+    console.log(`Server started on port `);
+});

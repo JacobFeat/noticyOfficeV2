@@ -41,6 +41,20 @@ const firstHam = document.querySelector('.first-ham');
 const secondHam = document.querySelector('.second-ham');
 const thirdHam = document.querySelector('.third-ham');
 
+const inputName = document.querySelector('.name-input');
+const inputMail = document.querySelector('.mail-input');
+const submitBtn = document.querySelector('.submit-input');
+
+submitBtn.addEventListener('click', (e) => {
+
+    const nameRegex = /\d/gi;
+    const checkNameRegex = inputName.value.match(nameRegex);
+
+    if (checkNameRegex !== null) {
+        // window.location.href = "send";
+        e.preventDefault();
+    }
+})
 
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -77,8 +91,8 @@ window.addEventListener('resize', () => {
     // document.documentElement.style.setProperty('--vh', `${vh}px`);
     console.log(`first: ${vh}, second: ${vhSec}, result: ${vh - vhSec}`);
     // console.log(vhSec);
-    if(vh - vhSec > 1.6 || vh - vhSec < -1.6 || vh -vhSec == 0){
-        document.documentElement.style.setProperty  ('--vh', `${vhSec}px`);
+    if (vh - vhSec > 1.6 || vh - vhSec < -1.6 || vh - vhSec == 0) {
+        document.documentElement.style.setProperty('--vh', `${vhSec}px`);
     }
 });
 

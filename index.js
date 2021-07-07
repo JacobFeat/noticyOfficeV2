@@ -41,6 +41,7 @@ const firstHam = document.querySelector('.first-ham');
 const secondHam = document.querySelector('.second-ham');
 const thirdHam = document.querySelector('.third-ham');
 
+const submitBtn = document.querySelector('submit-input');
 
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
