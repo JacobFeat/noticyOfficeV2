@@ -152,18 +152,18 @@
 
 
         <h3 class="form-title">Napisz do nas</h3>
-        <form action="" method="" class="form-container">
+        <form action="send" method="POST" class="form-container">
             <div class="form-box form-name">
                 <label for="">Imię i nazwisko:</label>
-                <input type="text" class=" form-input name-input" required>
+                <input type="text" class=" form-input name-input" name="person" required>
             </div>
             <div class="form-box form-mail">
                 <label for="">e-mail:</label>
-                <input type="email" class=" form-input mail-input" required>
+                <input type="email" class=" form-input mail-input" name="email" required>
             </div>
             <div class="form-box form-text">
                 <label for="">Wiadomość:</label>
-                <textarea name="text-input" class=" form-input text-input" spellcheck="false" minlength="10" required></textarea>
+                <textarea name="message" class=" form-input text-input" spellcheck="false" minlength="10" required></textarea>
             </div>
 
             <div class="form-box form-submit">
