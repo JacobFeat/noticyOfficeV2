@@ -52,10 +52,11 @@ const invalidTextTextArea = document.querySelector('.form-text .invalid-text');
 const formContainer = document.querySelector('.form-container');
 
 formContainer.addEventListener('submit', (e) => {
-    const nameRegex = /[a-z]/gi;
+    const nameRegex = /[^A-Za-z]/g;
+    console.log(inputName.value.match(nameRegex));
 
     inputsAll.forEach(input => {
-        if (input.value.length <= 0 || input.value.match(nameRegex) === null) {
+        if (input.value.length <= 0) {
             e.preventDefault();
             input.classList.add('invalid-form');
             input.parentElement.querySelector('.invalid-text').textContent = 'Nie można wysłać pustej wiadomości';
@@ -67,7 +68,7 @@ formContainer.addEventListener('submit', (e) => {
         }
     })
 
-    if(inputName.value.length > 0 && inputName.value.match(nameRegex) === null){
+    if(inputName.value.length > 0 && inputName.value.match(nameRegex) !== null){
         e.preventDefault();
         invalidTextName.textContent = 'Imię i nazwisko może zawierać tylko litery.';
         invalidTextName.style.visibility = 'visible';
