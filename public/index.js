@@ -64,12 +64,6 @@ window.addEventListener('load', () => {
     menuLine.style.left = navItemAll[0].offsetLeft + "px";
     halfImgAll[1].style.width = window.getComputedStyle(halfImgAll[0]).width;
 
-    if (window.innerWidth < 1050) {
-        contactContent.style.position = "relative";
-        const contactDistance = contactContent.offsetLeft - contactMap.offsetLeft;
-        contactContent.style.left = `-${contactDistance}px`;
-    }
-
     //change bg img to mobile version
     if (window.innerWidth < 751) {
         headerBgAll.forEach(bg => {
@@ -89,7 +83,8 @@ window.addEventListener('resize', () => {
     halfImgAll[1].style.width = window.getComputedStyle(halfImgAll[0]).width;
     let vhSec = window.innerHeight * 0.01;
     // document.documentElement.style.setProperty('--vh', `${vh}px`);
-    console.log(`first: ${vh}, second: ${vhSec}, result: ${vh - vhSec}`);
+    // console.log(`first: ${vh}, second: ${vhSec}, result: ${vh - vhSec}`);
+    
     // console.log(vhSec);
     if (vh - vhSec > 1.6 || vh - vhSec < -1.6 || vh - vhSec == 0) {
         document.documentElement.style.setProperty('--vh', `${vhSec}px`);

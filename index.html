@@ -20,6 +20,15 @@
         href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
         rel="stylesheet">
 
+    <!-- open source map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
 </head>
 
 <body>
@@ -41,7 +50,7 @@
             </div>
 
         </nav>
-        
+
         <div id="main-page">
             <img src="images/main-bg/main3-bg.jpg" alt="white columns" class="header-bg first-img">
             <img src="images/main-bg/klodzko2.jpg" alt="white columns" class="header-bg second-img">
@@ -163,7 +172,8 @@
             </div>
             <div class="form-box form-text">
                 <label for="">Wiadomość:</label>
-                <textarea name="message" class=" form-input text-input" spellcheck="false" minlength="10" required></textarea>
+                <textarea name="message" class=" form-input text-input" spellcheck="false" minlength="10"
+                    required></textarea>
             </div>
 
             <div class="form-box form-submit">
@@ -214,7 +224,10 @@
 
             </div>
             <div class="map-box">
-                <img src="images/testmap.jpg" alt="" class="map">
+                <!-- <img src="images/testmap.jpg" alt="" class="map"> -->
+                <div class="map" style="position: relative;">
+                    <iframe class="map-frame" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=ul.%20Bohater%C3%B3w%20Getta%201%20k%C5%82odzko+(Tytu%C5%82)&amp;ie=UTF8&amp;t=&amp;z=15&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                </div>
                 <p class="map-text">Klienci korzystający z usług notarialnych mogą korzystać z bezpłatnych miejsc
                     parkingowych godziny otwarcia usytuowanych za budynkiem, w którym mieści się lokal kancelarii.</p>
             </div>
