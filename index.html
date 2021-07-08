@@ -164,20 +164,24 @@
         <form action="send" method="POST" class="form-container">
             <div class="form-box form-name">
                 <label for="">Imię i nazwisko:</label>
-                <input type="text" class=" form-input name-input" name="person" required>
+                <input type="text" class=" form-input name-input" name="person">
+                <p class="invalid-text">Imię i nazwisko może zawierać tylko litery.</p>
             </div>
             <div class="form-box form-mail">
                 <label for="">e-mail:</label>
-                <input type="email" class=" form-input mail-input" name="email" required>
+                <input type="email" class=" form-input mail-input" name="email">
+                <p class="invalid-text">Nieprawidłowy format e-mail.</p>
             </div>
             <div class="form-box form-text">
                 <label for="">Wiadomość:</label>
-                <textarea name="message" class=" form-input text-input" spellcheck="false" minlength="10"
-                    required></textarea>
+                <textarea name="message" class=" form-input text-input" spellcheck="false"
+                    ></textarea>
+                <p class="invalid-text">Nie można wysłać pustej wiadomości</p>
+
             </div>
 
             <div class="form-box form-submit">
-                <input type="submit" class=" form-input submit-input" value="Wyślij">
+                <input type="submit" class="submit-input" value="Wyślij">
             </div>
         </form>
 

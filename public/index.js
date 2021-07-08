@@ -43,17 +43,46 @@ const thirdHam = document.querySelector('.third-ham');
 
 const inputName = document.querySelector('.name-input');
 const inputMail = document.querySelector('.mail-input');
+const inputTextarea = document.querySelector('.text-input');
+const inputsAll = document.querySelectorAll('.form-input');
 const submitBtn = document.querySelector('.submit-input');
+const invalidTextName = document.querySelector('.form-name .invalid-text');
+const invalidTextMail = document.querySelector('.form-mail .invalid-text');
+const invalidTextTextArea = document.querySelector('.form-text .invalid-text');
+const formContainer = document.querySelector('.form-container');
 
-submitBtn.addEventListener('click', (e) => {
+formContainer.addEventListener('submit', (e) => {
+    const nameRegex = /[a-z]/gi;
 
-    const nameRegex = /\d/gi;
-    const checkNameRegex = inputName.value.match(nameRegex);
+    inputsAll.forEach(input => {
+        if (input.value.length <= 0 || input.value.match(nameRegex) === null) {
+            e.preventDefault();
+            input.classList.add('invalid-form');
+            input.parentElement.querySelector('.invalid-text').textContent = 'Nie można wysłać pustej wiadomości';
+            input.parentElement.querySelector('.invalid-text').style.visibility = 'visible';
+        }
+        else {
+            input.classList.remove('invalid-form');
+            input.parentElement.querySelector('.invalid-text').style.visibility = 'hidden';
+        }
+    })
 
-    if (checkNameRegex !== null) {
-        // window.location.href = "send";
+    if(inputName.value.length > 0 && inputName.value.match(nameRegex) === null){
         e.preventDefault();
-    }
+        invalidTextName.textContent = 'Imię i nazwisko może zawierać tylko litery.';
+        invalidTextName.style.visibility = 'visible';
+        inputName.classList.add('invalid-form');
+    }   
+})
+
+inputsAll.forEach(input => {
+        input.addEventListener('keyup', () => {
+            if(input.classList.contains('invalid-form')){
+                console.log('hi');
+                input.classList.remove('invalid-form');
+                input.parentElement.querySelector('.invalid-text').style.visibility = 'hidden';
+            }
+        })
 })
 
 let vh = window.innerHeight * 0.01;
@@ -82,10 +111,6 @@ window.addEventListener('load', () => {
 window.addEventListener('resize', () => {
     halfImgAll[1].style.width = window.getComputedStyle(halfImgAll[0]).width;
     let vhSec = window.innerHeight * 0.01;
-    // document.documentElement.style.setProperty('--vh', `${vh}px`);
-    // console.log(`first: ${vh}, second: ${vhSec}, result: ${vh - vhSec}`);
-    
-    // console.log(vhSec);
     if (vh - vhSec > 1.6 || vh - vhSec < -1.6 || vh - vhSec == 0) {
         document.documentElement.style.setProperty('--vh', `${vhSec}px`);
     }
@@ -93,15 +118,6 @@ window.addEventListener('resize', () => {
 
 
 headerListItemAll.forEach(item => {
-    // const itemAnimation = item.animate([
-    //     { right: '-360px', },
-    //     { right: '-40px' }
-    // ], {
-    //     easing: 'cubic-bezier(0.82, -0.1, 0.78, 0.5)',
-    //     duration: 1000,
-    //     fill: 'forwards',
-    //     delay: 2000,
-    // });
 
     item.addEventListener('mouseover', (e) => {
 
@@ -121,7 +137,6 @@ headerListItemAll.forEach(item => {
     item.addEventListener('mouseleave', () => {
         hideContactBar(item);
     });
-    // document.addEventListener('scroll', ()=>  itemAnimation.pause() );
 });
 
 function hideContactBar(item) {
