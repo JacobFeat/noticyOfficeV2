@@ -91,7 +91,13 @@ nav{
     cursor: pointer;
 }
 
-.nav-list li:hover{
+.nav-list-item{
+    color: var(--green-color);
+    text-decoration: none;
+    pointer-events: none;
+}
+
+.nav-list-item:hover{
     color: #466669;
 }
 
@@ -909,11 +915,13 @@ select:-webkit-autofill:focus {
 
     .hamburger{
         display: block;
-        cursor: pointer;
         position: relative;
-        height: 16px;
+        background: none;
         top: -4px;
         width: 40px;
+        border: none;
+        height: 16px;
+        cursor: pointer;
     }
 
     .hamburger span{
