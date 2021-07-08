@@ -15,20 +15,6 @@
     <link rel="shortcut icon" href="images/fav1.ico" type="image/x-icon">
     <link rel="icon" href="images/fav1.ico" type="image/x-icon">
 
-    <!-- ICONS -->
-    <link
-        href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
-        rel="stylesheet">
-
-    <!-- open source map -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-        crossorigin="" />
-
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-        crossorigin=""></script>
-
 </head>
 
 <body>
@@ -165,18 +151,18 @@
             <div class="form-box form-name">
                 <label for="">Imię i nazwisko:</label>
                 <input type="text" class=" form-input name-input" name="person">
-                <p class="invalid-text">Imię i nazwisko może zawierać tylko litery.</p>
+                <p class="invalid-text">.</p>
             </div>
             <div class="form-box form-mail">
                 <label for="">e-mail:</label>
                 <input type="email" class=" form-input mail-input" name="email">
-                <p class="invalid-text">Nieprawidłowy format e-mail.</p>
+                <p class="invalid-text">.</p>
             </div>
             <div class="form-box form-text">
                 <label for="">Wiadomość:</label>
                 <textarea name="message" class=" form-input text-input" spellcheck="false"
                     ></textarea>
-                <p class="invalid-text">Nie można wysłać pustej wiadomości</p>
+                <p class="invalid-text">.</p>
 
             </div>
 
@@ -228,7 +214,6 @@
 
             </div>
             <div class="map-box">
-                <!-- <img src="images/testmap.jpg" alt="" class="map"> -->
                 <div class="map" style="position: relative;">
                     <iframe class="map-frame" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=ul.%20Bohater%C3%B3w%20Getta%201%20k%C5%82odzko+(Tytu%C5%82)&amp;ie=UTF8&amp;t=&amp;z=15&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                 </div>
