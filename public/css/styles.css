@@ -68,6 +68,11 @@ nav{
     display: none;
 }
 
+.nav-list-container{
+    position: relative;
+    height: 100%;
+}
+
 .nav-list{
     list-style-type: none;
     display: flex;
@@ -646,7 +651,6 @@ nav{
     clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
-
 .form-title{
     text-align: center;
     margin: 200px 0 50px;
@@ -664,7 +668,6 @@ nav{
     flex-wrap: wrap;
 }
 
-
 .form-box{
     font-size: 0.7em;
     display: flex;
@@ -674,8 +677,6 @@ nav{
     margin: 0 30px;
     position: relative;
 }
-
-
 
 .form-input{
     padding: 0 10px;
@@ -689,8 +690,6 @@ nav{
     -webkit-appearance: none;
     border-radius: 0;
 }
-
-
 
 .form-input:focus{
     outline: none;
@@ -741,21 +740,21 @@ select:-webkit-autofill:focus {
     padding: 8px;
 }
 
-
 .form-submit{
     width: 660px;
 }
 
 .submit-input{
+    border: none;
+    border-radius: 0;
+    height: 40px;
+    margin-top: 6px;
     background: var(--green-color);
     color: var(--white-color);
-    height: 40px;
     font-size: 0.75em;
     font-weight: 600;
     letter-spacing: 1.5px;
     cursor: pointer;
-    margin-top: 6px;
-    border: none;
     -webkit-appearance: none;
 }
 
@@ -881,7 +880,7 @@ select:-webkit-autofill:focus {
     width: 100%;
     height: 100%;
     min-height: 360px;
-
+    border: none;
 }
 
 .map-text{
