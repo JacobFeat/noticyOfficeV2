@@ -1406,3 +1406,9 @@ select:-webkit-autofill:focus {
         min-height: 140px;
     }
 }
+
+@media (prefers-reduced-motion) {
+    html {
+        scroll-behavior: dissolve;
+      }
+}

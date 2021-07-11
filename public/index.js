@@ -231,6 +231,8 @@ hamburger.addEventListener('click', () => {
         });
     }
 
+    setAriaExpanded(hamburger);
+
 })
 
 document.addEventListener("scroll", debounce(scrollAnimAll, 5));
@@ -248,6 +250,11 @@ setInterval(() => {
     setTimeout(turnThirdOn, 14000);
     turnFirstOn();
 }, 21000);
+
+function setAriaExpanded(btn){
+    const isOpened = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!isOpened));
+}
 
 function scrollAnimAll(e) {
     contentAll.forEach(content => {
