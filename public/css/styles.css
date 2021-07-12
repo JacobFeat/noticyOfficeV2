@@ -62,6 +62,7 @@ nav{
 
 .logo{
     height: 35px;
+    width: 307px;
     width: auto;
 }
 
@@ -523,7 +524,7 @@ nav{
 }
 
 .list-last-item{
-    background-color: var(--gold-color) !important;
+    /* background-color: var(--gold-color) !important; */
 }
 
 .notarial-active{
