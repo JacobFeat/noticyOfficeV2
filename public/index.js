@@ -54,11 +54,8 @@ const formContainer = document.querySelector('.form-container');
 formContainer.addEventListener('submit', (e) => {
     const nameRegex = /[^A-Za-z ]/g;
     const phoneRegex = /[^0-9-+ ]/g;
-
     const inputSurname = document.querySelector('.surname-input');
     const inputPhone = document.querySelector('.phone-input');
-
-    // console.log(inputName.value.match(nameRegex));
 
     inputsAll.forEach(input => {
         if (input.value.length <= 0) {
