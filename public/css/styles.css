@@ -103,7 +103,7 @@ nav{
     pointer-events: none;
 }
 
-.nav-list-item:hover{
+.nav-list li:hover .nav-list-item{
     color: #466669;
 }
 
