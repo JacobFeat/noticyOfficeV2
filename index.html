@@ -140,12 +140,22 @@
         <h3 class="form-title">Napisz do nas</h3>
         <form action="send" method="POST" class="form-container">
             <div class="form-box form-name">
-                <label for="person">Imię i nazwisko:</label>
-                <input type="text" id="person" class=" form-input name-input" name="person">
+                <label for="name">Imię:</label>
+                <input type="text" id="name" class=" form-input name-input" name="name">
+                <p class="invalid-text">.</p>
+            </div>            
+            <div class="form-box form-surname">
+                <label for="surname">Nazwisko:</label>
+                <input type="text" id="surname" class=" form-input surname-input" name="surname">
+                <p class="invalid-text">.</p>
+            </div>            
+            <div class="form-box form-phone">
+                <label for="phone">Telefon:</label>
+                <input type="tel" id="phone" class=" form-input phone-input" name="phone" maxlength="18">
                 <p class="invalid-text">.</p>
             </div>
             <div class="form-box form-mail">
-                <label for="email">e-mail:</label>
+                <label for="email">E-mail:</label>
                 <input type="email" id="email" class=" form-input mail-input" name="email">
                 <p class="invalid-text">.</p>
             </div>

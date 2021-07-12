@@ -52,8 +52,13 @@ const invalidTextTextArea = document.querySelector('.form-text .invalid-text');
 const formContainer = document.querySelector('.form-container');
 
 formContainer.addEventListener('submit', (e) => {
-    const nameRegex = /[^A-Za-z]/g;
-    console.log(inputName.value.match(nameRegex));
+    const nameRegex = /[^A-Za-z ]/g;
+    const phoneRegex = /[^0-9-+ ]/g;
+
+    const inputSurname = document.querySelector('.surname-input');
+    const inputPhone = document.querySelector('.phone-input');
+
+    // console.log(inputName.value.match(nameRegex));
 
     inputsAll.forEach(input => {
         if (input.value.length <= 0) {
@@ -68,22 +73,38 @@ formContainer.addEventListener('submit', (e) => {
         }
     })
 
-    if(inputName.value.length > 0 && inputName.value.match(nameRegex) !== null){
+    if (inputName.value.length > 0 && inputName.value.match(nameRegex) !== null) {
         e.preventDefault();
-        invalidTextName.textContent = 'Imię i nazwisko może zawierać tylko litery.';
+        invalidTextName.textContent = 'To pole może zawierać tylko litery.';
         invalidTextName.style.visibility = 'visible';
         inputName.classList.add('invalid-form');
-    }   
+    }
+
+    if (inputSurname.value.length > 0 && inputSurname.value.match(nameRegex) !== null) {
+        e.preventDefault();
+        const invalidTextSurname = document.querySelector('.form-surname .invalid-text');
+        invalidTextSurname.textContent = 'To pole może zawierać tylko litery.';
+        invalidTextSurname.style.visibility = 'visible';
+        inputSurname.classList.add('invalid-form');
+    }
+
+    if (inputPhone.value.length > 0 && inputPhone.value.match(phoneRegex) !== null) {
+        e.preventDefault();
+        const invalidPhone = document.querySelector('.form-phone .invalid-text');
+        invalidPhone.textContent = 'To pole może zawierać tylko cyfry.';
+        invalidPhone.style.visibility = 'visible';
+        inputPhone.classList.add('invalid-form');
+    }
 })
 
 inputsAll.forEach(input => {
-        input.addEventListener('keyup', () => {
-            if(input.classList.contains('invalid-form')){
-                console.log('hi');
-                input.classList.remove('invalid-form');
-                input.parentElement.querySelector('.invalid-text').style.visibility = 'hidden';
-            }
-        })
+    input.addEventListener('keyup', () => {
+        if (input.classList.contains('invalid-form')) {
+            console.log('hi');
+            input.classList.remove('invalid-form');
+            input.parentElement.querySelector('.invalid-text').style.visibility = 'hidden';
+        }
+    })
 })
 
 let vh = window.innerHeight * 0.01;
@@ -251,7 +272,7 @@ setInterval(() => {
     turnFirstOn();
 }, 21000);
 
-function setAriaExpanded(btn){
+function setAriaExpanded(btn) {
     const isOpened = btn.getAttribute('aria-expanded') === 'true';
     btn.setAttribute('aria-expanded', String(!isOpened));
 }
