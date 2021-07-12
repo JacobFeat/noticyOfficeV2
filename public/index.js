@@ -276,22 +276,22 @@ function setAriaExpanded(btn) {
 
 function scrollAnimAll(e) {
     contentAll.forEach(content => {
-        scrollAnim(content, 2, 'content-active');
+        scrollAnim(content, 5, 'content-active');
     });
 
     scrollAnim(notarialTitle, 0.5, 'notarial-active');
     scrollAnim(notarialText, 1, 'notarial-active');
 
     notarialList.forEach(item => {
-        scrollAnim(item, 1, 'notarial-active');
+        scrollAnim(item, 3, 'notarial-active');
     });
 
     halfContentAll.forEach(halfContent => {
-        scrollAnim(halfContent, 3, 'half-active');
+        scrollAnim(halfContent, 5, 'half-active');
     })
 
-    scrollAnim(contactContent, 2, 'content-active');
-    scrollAnim(contactMap, 2, 'content-active');
+    scrollAnim(contactContent, 5, 'content-active');
+    scrollAnim(contactMap, 5, 'content-active');
 
     scrollIndicator(e);
 

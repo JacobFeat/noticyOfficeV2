@@ -1174,8 +1174,9 @@ select:-webkit-autofill:focus {
     }
 
     .form-box{
-        margin: 15px 0;
+        margin: 6px 0;
         width: 100%;
+        font-size: 0.65em;
     }
 
     .map-box{
