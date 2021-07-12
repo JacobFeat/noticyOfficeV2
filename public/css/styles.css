@@ -312,6 +312,10 @@ nav{
     left: 25px;
 }
 
+.call-me-circle{
+    display: none;
+}
+
 .item-first{
     display: flex;
     justify-content: center;
@@ -1015,7 +1019,7 @@ select:-webkit-autofill:focus {
     
     .header-list-item{
         animation: none;
-        display: none;
+        /* display: none; */
     }
 
     #contact-info-container{
@@ -1295,6 +1299,29 @@ select:-webkit-autofill:focus {
     .header-description{
         max-width: 305px;
         font-size: 1.67em;
+    }
+
+    .header-list-item{
+        display: none;
+    }
+
+    .call-me-circle{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        z-index: 8;
+        border-radius: 100%;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        width: 50px;
+        height: 50px;
+        background: #fff;
+    }
+
+    .call-me-circle img{
+        width: 50%;
     }
 
     #about-me-box .content-img{
