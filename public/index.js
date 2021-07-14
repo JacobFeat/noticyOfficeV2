@@ -51,6 +51,28 @@ const invalidTextMail = document.querySelector('.form-mail .invalid-text');
 const invalidTextTextArea = document.querySelector('.form-text .invalid-text');
 const formContainer = document.querySelector('.form-container');
 
+if ( !( 'scrollBehavior' in document.documentElement.style ) ) {
+    import( 'https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.js' ).then( () => {
+        document.querySelector( 'nav' ).addEventListener( 'click', ( evt ) => {
+            const link = evt.target.closest( '.nav-list-item' );
+
+            if ( !link ) {
+                return;
+            }
+
+            evt.preventDefault();
+
+            const scrollToElement = link.getAttribute( 'href' );
+
+            document.querySelector( scrollToElement ).scrollIntoView( {
+                behavior: 'smooth' }
+            );
+
+            location.href = scrollToElement;
+        } );
+    } );
+}
+
 formContainer.addEventListener('submit', (e) => {
     const nameRegex = /[^A-Za-z ]/g;
     const phoneRegex = /[^0-9-+ ]/g;
@@ -161,37 +183,6 @@ headerListItemAll.forEach(item => {
 function hideContactBar(item) {
     item.classList.remove(item.classList[2]);
 }
-
-
-navItemAll[0].addEventListener('click', () => {
-    window.scrollTo({
-        top: mainPage.offsetTop,
-        left: 0,
-        behavior: 'smooth'
-    });
-});
-navItemAll[1].addEventListener('click', () => {
-    window.scrollTo({
-        top: aboutMeBox.offsetTop - 200,
-        left: 0,
-        behavior: 'smooth'
-    });
-});
-navItemAll[2].addEventListener('click', () => {
-    window.scrollTo({
-        top: notarialBox.offsetTop - 100,
-        left: 0,
-        behavior: 'smooth'
-    });
-});
-navItemAll[3].addEventListener('click', () => {
-    window.scrollTo({
-        top: contactBox.offsetTop - 0,
-        left: 0,
-        behavior: 'smooth'
-    });
-});
-
 
 navItemAll.forEach(item => {
     item.addEventListener('click', () => {
