@@ -117,6 +117,10 @@ nav{
     color: #dbdbdb;
 }
 
+.nav-list li:hover .nav-list-item-background{
+    color: #000000;
+}
+
 .header-bg{
     height: calc(100vh - 80px);
     height: calc(var(--vh, 1vh) * 100 - 80px);
