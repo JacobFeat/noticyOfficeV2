@@ -1,13 +1,4 @@
-const changeBtnAll = document.querySelectorAll(".change-bg-btn");
-
 const headerBgAll = document.querySelectorAll('.header-bg');
-
-const changeFirBtn = document.querySelector(".change-first");
-const changeSecBtn = document.querySelector(".change-second");
-const changeThiBtn = document.querySelector(".change-third");
-const firstBgImg = document.querySelector(".first-img");
-const secondBgImg = document.querySelector(".second-img");
-const thirdBgImg = document.querySelector(".third-img");
 
 const contentAll = document.querySelectorAll(".content-left, .content-img");
 
@@ -32,11 +23,13 @@ const headerListItemAll = document.querySelectorAll('.header-list-item');
 const menuLine = document.querySelector('.menu-line');
 const navList = document.querySelector('.nav-list');
 const navItemAll = document.querySelectorAll('.nav-list li');
+const navItemLinks = document.querySelectorAll('.nav-list-item');
 
 const contactContent = document.querySelector('.contact-content');
 const contactMap = document.querySelector('.map-box');
 
 const hamburger = document.querySelector('.hamburger');
+const hamburgerSpans = document.querySelectorAll('.hamburger span')
 const firstHam = document.querySelector('.first-ham');
 const secondHam = document.querySelector('.second-ham');
 const thirdHam = document.querySelector('.third-ham');
@@ -133,20 +126,6 @@ window.addEventListener('load', () => {
     menuLine.style.width = window.getComputedStyle(navItemAll[0]).width;
     menuLine.style.left = navItemAll[0].offsetLeft + "px";
     halfImgAll[1].style.width = window.getComputedStyle(halfImgAll[0]).width;
-
-    //change bg img to mobile version
-    if (window.innerWidth < 751) {
-        headerBgAll.forEach(bg => {
-            let link = bg.src;
-            const linkStr = 'main-bg/';
-            let linkStrIndex = link.indexOf(linkStr);
-            let firstPart = link.substring(0, linkStrIndex + 8);
-            const mobile = 'mobile/';
-            let secondPart = link.substring(linkStrIndex + 8, link.length);
-            let changedLink = firstPart + mobile + secondPart;
-            bg.src = changedLink;
-        });
-    }
 });
 
 window.addEventListener('resize', () => {
@@ -191,74 +170,29 @@ navItemAll.forEach(item => {
             secondHam.classList.remove('ham-hid-active');
             thirdHam.classList.remove('ham-vis-active-minus');
             navList.classList.remove('hamburger-active');
-
-            if (navList.classList[1] === "hamburger-active") {
-                navItemAll.forEach(item => {
-                    item.style.visibility = "visible";
-                    item.style.pointerEvents = "auto";
-                    item.style.touchAction = "auto";
-                    item.style.display = "block";
-                });
-            }
-            else {
-                navItemAll.forEach(item => {
-                    item.style.visibility = "hidden";
-                    item.style.pointerEvents = "none";
-                    item.style.touchAction = "none";
-                    (setTimeout(() => {
-                        item.style.display = "none";
-                    }, 500));
-
-                });
-            }
+            layout.classList.remove('layout-active');
+            hamburger.setAttribute('aria-expanded', 'false');
         }
     });
 });
+
+const layout = document.querySelector('.layout');
 
 hamburger.addEventListener('click', () => {
     firstHam.classList.toggle('ham-vis-active');
     secondHam.classList.toggle('ham-hid-active');
     thirdHam.classList.toggle('ham-vis-active-minus');
     navList.classList.toggle('hamburger-active');
-    if (navList.classList[1] === "hamburger-active") {
-        navItemAll.forEach(item => {
-            item.style.visibility = "visible";
-            item.style.pointerEvents = "auto";
-            item.style.touchAction = "auto";
-            item.style.display = "block";
-        });
-    }
-    else {
-        navItemAll.forEach(item => {
-            item.style.visibility = "hidden";
-            item.style.pointerEvents = "none";
-            item.style.touchAction = "none";
-            (setTimeout(() => {
-                item.style.display = "none";
-            }, 500));
-
-        });
-    }
-
+    layout.classList.toggle('layout-active');
     setAriaExpanded(hamburger);
 
 })
 
-document.addEventListener("scroll", debounce(scrollAnimAll, 5));
-
-document.addEventListener('scroll', finishHeaderContactAnim);
-
-changeFirBtn.addEventListener("click", turnFirstOn);
-changeSecBtn.addEventListener("click", turnSecondOn);
-changeThiBtn.addEventListener("click", turnThirdOn);
-
-setTimeout(turnSecondOn, 7000);
-setTimeout(turnThirdOn, 14000);
-setInterval(() => {
-    setTimeout(turnSecondOn, 7000);
-    setTimeout(turnThirdOn, 14000);
-    turnFirstOn();
-}, 21000);
+document.addEventListener('scroll', () => {
+    scrollAnimAll();
+    finishHeaderContactAnim();
+    changeNavColor();
+})
 
 function setAriaExpanded(btn) {
     const isOpened = btn.getAttribute('aria-expanded') === 'true';
@@ -328,33 +262,23 @@ function finishHeaderContactAnim() {
 }
 
 
+const nav = document.querySelector('nav');
 
-function turnFirstOn() {
-    firstBgImg.style.opacity = "1";
-    secondBgImg.style.opacity = "0";
-    thirdBgImg.style.opacity = "0";
-    changeFirBtn.style.background = "#C8C8C8";
-    changeSecBtn.style.background = "#EAEAEA";
-    changeThiBtn.style.background = "#EAEAEA";
+function changeNavColor(){
+    if(scrollY+100 > mainPage.clientHeight){
+        nav.classList.add('nav-background');
+        navItemLinks.forEach(link => link.classList.add('nav-list-item-background'));
+        document.querySelector('.logo').src = "images/wd_logo.svg";
+        hamburgerSpans.forEach(span => span.classList.add('span-background'));
+    }
+    else{
+        nav.classList.remove('nav-background');
+        navItemLinks.forEach(link => link.classList.remove('nav-list-item-background'));
+        document.querySelector('.logo').src = "images/wd_logo_white_RGB.svg";
+        hamburgerSpans.forEach(span => span.classList.remove('span-background'));
+    }
 }
 
-function turnSecondOn() {
-    firstBgImg.style.opacity = "0";
-    secondBgImg.style.opacity = "1";
-    thirdBgImg.style.opacity = "0";
-    changeFirBtn.style.background = "#EAEAEA";
-    changeSecBtn.style.background = "#C8C8C8";
-    changeThiBtn.style.background = "#EAEAEA";
-}
-
-function turnThirdOn() {
-    firstBgImg.style.opacity = "0";
-    secondBgImg.style.opacity = "0";
-    thirdBgImg.style.opacity = "1";
-    changeFirBtn.style.background = "#EAEAEA";
-    changeSecBtn.style.background = "#EAEAEA";
-    changeThiBtn.style.background = "#C8C8C8";
-}
 
 //wesbros
 function debounce(func, wait = 20, immediate = true) {
