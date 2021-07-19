@@ -265,7 +265,7 @@ function finishHeaderContactAnim() {
 const nav = document.querySelector('nav');
 
 function changeNavColor(){
-    if(scrollY+100 > mainPage.clientHeight){
+    if(scrollY+nav.clientHeight > mainPage.clientHeight){
         nav.classList.add('nav-background');
         navItemLinks.forEach(link => link.classList.add('nav-list-item-background'));
         document.querySelector('.logo').src = "images/wd_logo.svg";
