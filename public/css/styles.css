@@ -140,7 +140,21 @@ nav{
     margin: 0 auto;
     z-index: 2;
     text-align: center;
+    /* transform: translateY(50%);
+    opacity: 0;
+    animation: header-animation 1s ease forwards 0.3s; */
 }
+
+/* @keyframes header-animation {
+    0%{
+        opacity: 0;
+        transform: translateY(50%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+} */
 
 .header-title{
     z-index: 2;
