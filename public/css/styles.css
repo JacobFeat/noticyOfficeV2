@@ -373,7 +373,9 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 1800px;
     padding: 200px 200px 120px;
+    margin: 0 auto;
     font-size: 14px;
     color: var(--green-color);
 }
