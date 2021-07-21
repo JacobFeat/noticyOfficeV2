@@ -853,8 +853,8 @@ select:-webkit-autofill:focus {
     align-items: center;
 }
 
-.contact-link:first-of-type{
-    padding-top: 10px !important;
+.contact-nip{
+    padding-top: 10px;
 }
 
 .contact-link svg{
