@@ -1505,7 +1505,8 @@ select:-webkit-autofill:focus {
     }
 
     .call-me-circle img{
-        width: 50%;
+        width: 25px;
+        height: 23px;
     }
 
     #about-me-box .content-img{
