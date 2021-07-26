@@ -950,8 +950,8 @@ select:-webkit-autofill:focus {
         background: none;
         top: -4px;
         width: 40px;
-        height: 16px;
         border: none;
+        height: 16px;
         cursor: pointer;
         z-index: 101;
     }
