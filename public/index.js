@@ -159,6 +159,20 @@ headerListItemAll.forEach(item => {
     });
 });
 
+const rodoExpanded = document.querySelector('.rodo-expanded');
+function showRodo(){
+    rodoExpanded.classList.add('rodo-expanded-active');
+}
+
+const rodoClose = document.querySelector('.rodo-close');
+function hideRodo(){
+    rodoExpanded.classList.remove('rodo-expanded-active');
+}
+
+const rodoTextUnderline = document.querySelector('.rodo-text-underline');
+rodoTextUnderline.addEventListener('click', showRodo);
+rodoClose.addEventListener('click', hideRodo);
+
 function hideContactBar(item) {
     item.classList.remove(item.classList[2]);
 }

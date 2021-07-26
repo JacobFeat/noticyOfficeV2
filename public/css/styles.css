@@ -748,7 +748,7 @@ select:-webkit-autofill:focus {
 }
 
 .form-box .invalid-text{
-    font-size: 0.55em;
+    font-size: 0.65em;
     font-weight: 700;
     margin-top: 3px;
     color: #FF9F9F;
@@ -773,6 +773,89 @@ select:-webkit-autofill:focus {
 
 .text-input:focus{
     padding: 8px;
+}
+
+.form-rodo{
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    width: 660px;
+}
+
+.rodo-input{
+
+}
+
+.rodo-text{
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 0.5em;
+}
+
+.rodo-expanded{
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.82);
+    color: #fff;
+    font-size: 0.45em;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+}
+
+.rodo-expanded-active{
+    opacity: 1;
+    visibility: visible;
+    transition: 0.3s ease;
+}
+
+.rodo-expanded::before{
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    
+    border-top: 10px solid rgba(0, 0, 0, 0.82);
+}
+
+.rodo-expanded .rodo-close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.rodo-close span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    display: block;
+    width: 50%;
+    height: 1px;
+    background: #fff;
+}
+
+.rodo-close span:last-of-type{
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.rodo-text-underline{
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .form-submit{
@@ -1112,6 +1195,11 @@ select:-webkit-autofill:focus {
         margin-right: 0;
         margin-left: 50px;
     }
+
+    .rodo-expanded{
+        width: 90%;
+        padding: 30px;
+    }
 }
 
 @media screen and (max-width: 880px) {
@@ -1243,6 +1331,10 @@ select:-webkit-autofill:focus {
         margin: 6px 0;
         width: 100%;
         font-size: 0.65em;
+    }
+
+    .form-rodo{
+        width: 100%;
     }
 
     .map-box{
