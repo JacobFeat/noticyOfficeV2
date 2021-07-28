@@ -684,7 +684,7 @@ nav{
 
 .form-title{
     text-align: center;
-    margin: 200px 0 50px;
+    margin: 160px 0 50px;
     color: var(--green-color);
     font-size: 32px;
 }
@@ -694,7 +694,7 @@ nav{
     justify-content: center;
     font-size: 32px;
     color: var(--green-color);
-    margin: 0 auto 200px;
+    margin: 0 auto 160px;
     max-width: 900px;
     flex-wrap: wrap;
 }
@@ -973,6 +973,10 @@ select:-webkit-autofill:focus {
     align-items: center;
 }
 
+.contact-link:first-of-type{
+    padding-top: 10px;
+}
+
 .contact-content .contact-nip{
     padding-top: 10px;
     color: var(--white-color);
@@ -1015,10 +1019,10 @@ select:-webkit-autofill:focus {
 }
 
 .map-box{
-    height: 340px;
+    height: 380px;
     height: 100%;
     width: 500px;
-    margin-left: 50px;
+    margin: 40px 0 0 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1029,7 +1033,7 @@ select:-webkit-autofill:focus {
 .map{
     height: 80%;
     width: 100%;
-    padding: 20px 0;
+    padding: 20px 0 10px;
     position: relative;
 }
 
@@ -1551,6 +1555,10 @@ select:-webkit-autofill:focus {
     }
 
     .contact-content > p{
+        inline-size: 100%;
+    }
+
+    .contact-bank > p {
         inline-size: 100%;
     }
 

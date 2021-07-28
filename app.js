@@ -43,7 +43,7 @@ app.post('/send', (req, res) => {
     // setup email data with unicode symbols
     let mailOptions = {
         from: `"${req.body.name} ${req.body.surname}" <appektest@gmail.com>`, // sender address
-        to: 'jakubk198@gmail.com', // list of receivers
+        to: 'kancelaria@notariusz-dzieciol.pl', // list of receivers
         subject: 'Wiadomość z formularza na stronie', // Subject line
         text: 'Kancelaria Notarialna - Wojciech Dzięcioł', // plain text body
         html: output // html body
@@ -62,7 +62,7 @@ app.post('/send', (req, res) => {
     });
 });
 
-app.listen(process.env.PORT || 8080, function(){
+app.listen(process.env.PORT || 4000, function(){
     console.log(`Server started on port `);
   });
   
