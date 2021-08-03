@@ -43,7 +43,7 @@ app.post('/send', (req, res) => {
     // setup email data with unicode symbols
     let mailOptions = {
         from: `"${req.body.name} ${req.body.surname}" <appektest@gmail.com>`, // sender address
-        to: 'kancelaria@notariusz-dzieciol.pl', // list of receivers
+        to: 'jakubk198@gmail.com', // list of receivers
         subject: 'Wiadomość z formularza na stronie', // Subject line
         text: 'Kancelaria Notarialna - Wojciech Dzięcioł', // plain text body
         html: output // html body
