@@ -1,1 +1,1 @@
-current live: https://notariuszklodzko.herokuapp.com/
+current live: https://notariusz-dzieciol.pl/
